@@ -11,7 +11,7 @@
  //This program has been copied from text as instructed
  int main( )
  {
-     cout<<"Hello";
+     cout<<"Hello\n";
     int number_of_pods, peas_per_pod, total_peas;
         cout << "Enter the number of pods:\n";
         cin >> number_of_pods;
@@ -27,6 +27,6 @@
         cout << "you have ";
         cout << total_peas;
         cout << " peas in all the pods.\n";
-        cout<<"goodbye";
+        cout<<"goodbye\n";
         return 0;
  }

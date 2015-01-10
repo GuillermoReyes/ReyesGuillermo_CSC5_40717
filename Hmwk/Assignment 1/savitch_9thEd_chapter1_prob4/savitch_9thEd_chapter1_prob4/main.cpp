@@ -24,7 +24,7 @@ int main(int argc, const char * argv[]) {
     dist= 0.5*GRAVTY*time*time;
     
     // Execute calculation
-    cout<<" the distance traveled in freefall during that time is "<<dist<<endl;
+    cout<<" the distance traveled in feet during the freefal is "<<dist<<endl;
     
     
     return 0;
