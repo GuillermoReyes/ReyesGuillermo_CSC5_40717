@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3609FD01A65E8B000909058"
-               BuildableName = "Savitch_9thEd_chapter2_prob6"
-               BlueprintName = "Savitch_9thEd_chapter2_prob6"
-               ReferencedContainer = "container:Savitch_9thEd_chapter2_prob6.xcodeproj">
+               BlueprintIdentifier = "B3609FE31A66132D00909058"
+               BuildableName = "Savitch_9thEd_chapter2_prob15"
+               BlueprintName = "Savitch_9thEd_chapter2_prob15"
+               ReferencedContainer = "container:Savitch_9thEd_chapter2_prob15.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3609FD01A65E8B000909058"
-            BuildableName = "Savitch_9thEd_chapter2_prob6"
-            BlueprintName = "Savitch_9thEd_chapter2_prob6"
-            ReferencedContainer = "container:Savitch_9thEd_chapter2_prob6.xcodeproj">
+            BlueprintIdentifier = "B3609FE31A66132D00909058"
+            BuildableName = "Savitch_9thEd_chapter2_prob15"
+            BlueprintName = "Savitch_9thEd_chapter2_prob15"
+            ReferencedContainer = "container:Savitch_9thEd_chapter2_prob15.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3609FD01A65E8B000909058"
-            BuildableName = "Savitch_9thEd_chapter2_prob6"
-            BlueprintName = "Savitch_9thEd_chapter2_prob6"
-            ReferencedContainer = "container:Savitch_9thEd_chapter2_prob6.xcodeproj">
+            BlueprintIdentifier = "B3609FE31A66132D00909058"
+            BuildableName = "Savitch_9thEd_chapter2_prob15"
+            BlueprintName = "Savitch_9thEd_chapter2_prob15"
+            ReferencedContainer = "container:Savitch_9thEd_chapter2_prob15.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B3609FD01A65E8B000909058"
-            BuildableName = "Savitch_9thEd_chapter2_prob6"
-            BlueprintName = "Savitch_9thEd_chapter2_prob6"
-            ReferencedContainer = "container:Savitch_9thEd_chapter2_prob6.xcodeproj">
+            BlueprintIdentifier = "B3609FE31A66132D00909058"
+            BuildableName = "Savitch_9thEd_chapter2_prob15"
+            BlueprintName = "Savitch_9thEd_chapter2_prob15"
+            ReferencedContainer = "container:Savitch_9thEd_chapter2_prob15.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
