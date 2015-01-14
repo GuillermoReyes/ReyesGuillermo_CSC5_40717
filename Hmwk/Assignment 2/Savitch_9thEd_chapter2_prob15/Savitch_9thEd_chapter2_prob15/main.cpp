@@ -7,9 +7,37 @@
 //
 
 #include <iostream>
+#include <cmath>
+using namespace std;
+
+
+
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    float alpha,length,temp; // ariables for constant, length , and temperature
+    
+    cout<<"What is the specific coefficient of the material for expansion or contraction?";
+    cin>>alpha;
+    
+    cout<<"What is the length of the material in meters? ";
+    cin>>length;
+    
+    cout<<"What is the change in temperature in celsius?";
+    cin>>temp;
+    
+    float stretch =alpha*length*temp;
+    
+    // Conditional execution wether it is negative or positive
+    if(stretch<=0) {
+        cout<<" it contracts by "<<abs(stretch)<<" meters"<<endl;
+        
+    }
+    if(stretch>=0) {
+        cout<<"it expands by "<<stretch<<" meters"<<endl;
+    }
+    
+    
+    
+    
     return 0;
 }

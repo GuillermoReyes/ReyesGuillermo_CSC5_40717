@@ -10,7 +10,7 @@
 
 using namespace std;
 
-float const SIS    =      350*.01; //How many grams per soda can that are the sweetener
+float const SIS    =      350*.001; //How many grams per soda can that are the sweetener
 float const DTHRAT =     .1429;    // The death rati0; percentage to find lethal dose of sweetener
 
 int main(int argc, const char * argv[]) {
