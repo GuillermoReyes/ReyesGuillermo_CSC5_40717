@@ -9,10 +9,28 @@
 #include <iostream>
 using namespace std;
 
+int main() {
+int n = 0; // number of exercises
+int score = 0;
+int possible = 0;
 
-int main(int argc, const char * argv[]) {
+cout << "How many exercises to input? ";
+cin >> n;
+
+for(int i =1; i <= n; i++)
+{
+    int input;
     
+    cout << "Score recieved for exercise " << i << ": "<<endl;
+    cin >> input;
+    score += input;
     
+    cout << "Total points possible for exercise " << i << ": "<<endl;
+    cin >> input;
+    possible += input;
+    }
     
-    return 0;
+    float percent = (score/possible);
+    cout << "Your total is " << score << " out of " << possible << ", or " <<percent<< "%." << endl;
+    return true;
 }

@@ -6,33 +6,27 @@
 //  Copyright (c) 2015 Guillermo . All rights reserved.
 //
 
+// I reformatted the solution to make it more useful and relevant, this could be don for all the tax brackets
 #include <iostream>
+
 using namespace std;
 
-float const SSTAX = .062; //(social security tax)
-float const STTAX = .0930;  //(state taxes)
-//float const FDTAX = .28;     //(federal tax on income oer 89,350)
-float const  MIN   = 89350;
-                                   //There is also a minimum of 18193.75
-float const SUM   = SSTAX+STTAX;
-int main(int argc, const char * argv[]) {
-    cout<<"The following program calculates the taxes,based on the tax bracket from $89,350 to $186,350";
-    
-    float gross;
-    
-    cout<<"What is your gross income?";
-    cin>>gross;
-    
-    unsigned int extra = gross-MIN;
-    float addtax = .28*extra;
-    
-    cout<<"Your net pay is"<<endl;
-    cout<<gross-(gross*SUM)-addtax-18193.75;
-    
-    
-    
+int main() {
+    float TAX = .155; //total taxes colleted on gross income
+    float MIN =18193.75; //minimum you have to gie to feds based on tax bracket
+    float FDTAX = .28; //tax rate on amount over $89,350
+    float GROSS;  // this is the input gross inome
 
+    cout<<"Enter your Income within the range of $89,350 to $186,350 :";
+    cin>>GROSS;
     
-    return true;
+    float add= (GROSS-89350)*FDTAX;//Additional inome taxed
+    
+    float net = GROSS-add-GROSS*TAX-MIN;
+    cout<<"Your total net income (take-home pay) is :$"<<net<<endl;
+    
+    cout<<"Your monthly net income is $"<<net/12<<endl;
+    return 0;
 }
+
 
