@@ -31,6 +31,6 @@ for(int i =1; i <= n; i++)
     }
     
     float percent = (score/possible);
-    cout << "Your total is " << score << " out of " << possible << ", or " <<percent<< "%." << endl;
+    cout << "Your total is " <<score<< " out of " <<possible<< ", or " <<score/possible<< "%." << endl;
     return true;
 }
