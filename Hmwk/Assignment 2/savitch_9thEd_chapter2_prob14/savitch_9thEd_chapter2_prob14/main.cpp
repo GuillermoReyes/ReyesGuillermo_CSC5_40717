@@ -8,29 +8,31 @@
 
 #include <iostream>
 using namespace std;
+#include <iomanip>
 
 int main() {
-int n = 0; // number of exercises
-int score = 0;
-int possible = 0;
-
-cout << "How many exercises to input? ";
-cin >> n;
-
-for(int i =1; i <= n; i++)
-{
-    int input;
+    int n = 0; // number of exercises
+    float score = 0;   //Student score
+    float possible = 0; // amount possible
     
-    cout << "Score recieved for exercise " << i << ": "<<endl;
-    cin >> input;
-    score += input;
+    cout << "How many exercises to input? ";
+    cin >> n;
     
-    cout << "Total points possible for exercise " << i << ": "<<endl;
-    cin >> input;
-    possible += input;
+    for(int i =1; i <= n; i++)   //execution begins here
+    {
+        int input;
+        
+        cout << "Score recieved for exercise " << i << ": "<<endl;
+        cin >> input;
+        score += input;
+        
+        cout << "Total points possible for exercise " << i << ": "<<endl;
+        cin >> input;
+        possible += input;
     }
     
-    float percent = (score/possible);
-    cout << "Your total is " <<score<< " out of " <<possible<< ", or " <<score/possible<< "%." << endl;
-    return true;
+    cout<<fixed<<showpoint<<setprecision(2)<<endl;
+    cout << "Your total is " <<score<< " out of " <<possible<< ", or " <<score/possible*100<< "%." << endl;
+    
+    return 0;
 }

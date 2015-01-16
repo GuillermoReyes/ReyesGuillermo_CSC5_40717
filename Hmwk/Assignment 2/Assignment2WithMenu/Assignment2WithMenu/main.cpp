@@ -7,6 +7,8 @@
 //
 
 #include <iostream>
+#include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -53,7 +55,8 @@ int main(int argc, char** argv) {
             
             cout<<"You have chose solution 2"<<endl;
             const float HRTOMIN = 60; // 60 min per hour
-            const float MINTOSE = 60;// 60 sec per min            float pace;
+            const float MINTOSE = 60;// 60 sec per min
+            
             float pace;
             cout<<"what is your pace in miles per hour?";
             cin>>pace;
@@ -65,6 +68,8 @@ int main(int argc, char** argv) {
             // output the results
             cout<<"your pace is "<<mpm<<" minutes and "<<secpmile<<" seconds ";
             cout<<"per mile"<<endl;
+
+            
             break;
             
         }
@@ -103,12 +108,14 @@ int main(int argc, char** argv) {
             //Global constants if any
         case 4:{
             cout<<"You have chosen solution 1"<<endl;
+            cout<<"I did this problem differently than in the book. This version is slightly more useful.";
+            cout<<" It uses California and Federal tax rates to calculate net income within a tax bracket\n";
             float TAX = .155; //total taxes colleted on gross income
             float MIN =18193.75; //minimum you have to gie to feds based on tax bracket
             float FDTAX = .28; //tax rate on amount over $89,350
             float GROSS;  // this is the input gross inome
             
-            cout<<"Enter your Income within the range of $89,350 to $186,350 :";
+            cout<<"Enter an Income within the range of $89,350 to $186,350 :";
             cin>>GROSS;
             
             float add= (GROSS-89350)*FDTAX;//Additional inome taxed
@@ -183,7 +190,7 @@ int main(int argc, char** argv) {
             char sex; // The sex of the human, wether male or female
             
             cout<<"what is your sex?"<<endl;
-            cout<<"if male type m, if female type f."<<endl; //to limit user error
+            cout<<"if male type lowercase m, if female type lowercase f."<<endl; //to limit user error
             cin>>sex;
             
             
@@ -195,18 +202,62 @@ int main(int argc, char** argv) {
             if(sex=='f') {
                 cout<<"eat "<<women<<" chocolate bars to maintain your body weight"<<endl;
             }
+            
             break;
         }
             //Global constants if any
         case 8:{
             cout<<"You have chosen solution 1"<<endl;
-            //Code goes here
+            int n = 0; // number of exercises
+            float score = 0;   //Student score
+            float possible = 0; // amount possible
+            
+            cout << "How many exercises to input? ";
+            cin >> n;
+            
+            for(int i =1; i <= n; i++)   //execution begins here
+            {
+                int input;
+                
+                cout << "Score recieved for exercise " << i << ": "<<endl;
+                cin >> input;
+                score += input;
+                
+                cout << "Total points possible for exercise " << i << ": "<<endl;
+                cin >> input;
+                possible += input;
+            }
+            
+            cout<<fixed<<showpoint<<setprecision(2)<<endl;
+            cout << "Your total is " <<score<< " out of " <<possible<< ", or " <<score/possible*100<< "%." << endl;
             break;
         }
             //Global constants if any
         case 9:{
             cout<<"You have chosen solution 1"<<endl;
-            //Code goes here
+            float alpha,length,temp; // ariables for constant, length , and temperature
+            
+            cout<<"What is the specific constant of the material for elasticity?";
+            cin>>alpha;
+            
+            cout<<"What is the length of the material in meters? ";
+            cin>>length;
+            
+            cout<<"What is the change in temperature in celsius?";
+            cin>>temp;
+            
+            float stretch =alpha*length*temp;
+            
+            // Conditional execution wether it is negative or positive
+            if(stretch<=0) {
+                cout<<" it contracts by "<<abs(stretch)<<" meters"<<endl;
+                
+            }
+            if(stretch>=0) {
+                cout<<"it expands by "<<stretch<<" meters"<<endl;
+            }
+            
+            
             break;
         }
             
