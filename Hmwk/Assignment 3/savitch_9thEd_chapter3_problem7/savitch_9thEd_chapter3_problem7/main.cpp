@@ -18,15 +18,12 @@ int main(int argc, const char * argv[]) {
     int n; //The amount of iteration of the series
     float x; //The value of x that we are trying to find
     
-    cout<<"Choose a valuer of x that you would like to imput:";
+    cout<<"Choose a valuer of x that you would like to input:";
     cin>>x;
     
-    cout<<"Choose the number of iterations that you would liekt o perform on this function:";
-    cin>>n;
-    
-    for(int i=0;i<=n;i++){
-        float up= pow(x,n);
-        float down= fact(n-1);
+    cout<<"Choose the number of iterations that you would like to perform on this function:";
+ 
         
-    }
+    
+    return 0;
 }
