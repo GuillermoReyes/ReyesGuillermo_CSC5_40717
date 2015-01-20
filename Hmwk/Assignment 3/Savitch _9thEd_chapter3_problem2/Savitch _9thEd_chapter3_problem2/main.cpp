@@ -14,12 +14,12 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     cout<<"Consider a polynomial of the format ax^2+bx+c=0\n";
     cout<<" Where a,b,c are the coeffiients of the variables constanst\n";
-    char prompt;
+    char prompt;       //User decides wether to proceed with action
     cout<<"would you like to perform a calculation?\n";
     cout<<"type 'Y' for yes or 'N' for no."<<endl;
     cin>>prompt;
     
-    while(prompt=='Y'){
+    while(prompt=='Y'||prompt=='y'){
     float a;
     float b;
     float c;

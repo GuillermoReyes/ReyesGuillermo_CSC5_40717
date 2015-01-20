@@ -45,6 +45,9 @@ int main() {
         cout<<"At month "<<month<<" the balance is "<<balance<<"\n";
         cout<<endl;
         cout<<"The total amount paid towards interest is $"<<TotalInt<<endl;
+        float years=period/12;          //years to pay off loan
+        cout<<"the anualized interest rate is "<<(TotalInt/years)/ibalance*100<<"%."<<endl;
+    
     
     return 0;
 }

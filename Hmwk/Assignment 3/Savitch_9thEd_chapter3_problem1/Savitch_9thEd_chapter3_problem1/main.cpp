@@ -12,7 +12,10 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     cout<<"This program wil calculate the cost of your long-distance phone call.\n";
-    
+    char choose;
+    cout<<"Would you like to proceed?. Type Y for yes or N for no.\n";
+    cin>>choose;
+    while(choose=='Y'||choose=='y'){
     char day; //Variabll for the day
     int time; //Variable for the time of the day
     int duration;// Duration of call in minutes
@@ -25,10 +28,10 @@ int main(int argc, const char * argv[]) {
     cout<<"For Friday type 'F' "<<endl;
     cout<<"For Saturday type S"<<endl;
     cout<<"For Sunday type 'A'"<<endl;
-    cout<<" This program is ase-sensitive, so please use the specified symbols\n";
+    cout<<" This program is case-sensitive, so please use the specified symbols\n";
     cin>>day;
     
-    cout<<"In put the time of the call in 24 hour notation/military time. "<<endl;
+    cout<<"Input the time of the call in 24 hour notation/military time. "<<endl;
     cout<<" Example. 1330 or 745. etc.  "<<endl;
     cin>>time;
     
@@ -57,11 +60,16 @@ int main(int argc, const char * argv[]) {
             float rate =duration*.15;
             cout<<"the phone call cost $"<<rate<<endl;
             break;
+            
       
       
             
     
     }
+    cout<<"Would you like to repeat this program? Y/N.\n";
+        cin>>choose;
+    }
+    
     return 0;
 }
 
