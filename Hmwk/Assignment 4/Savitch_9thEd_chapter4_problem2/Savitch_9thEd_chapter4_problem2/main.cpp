@@ -7,22 +7,38 @@
 //
 
 #include <iostream>
+#include <cmath>
+
 using namespace std;
-float HatSize(float a,float b){
-    return a/b*2.9;
+
+//Funtion Prototypes
+
+float Hsize(float w,float h){
+    return w/h*2.9;
 }
-float JacketSize(float a,float b,float c){ //Heighth, weight ,age
-    if(c<=30){
-        return a*b/288;
-    }
-    else if(c>=40&&c<50){
-        return a*b/288+.125;
-        
-    }
-    else if()
+float Jsize(float we, float he,float a) { //weight,height,age
+    if (a>=50) return (he*we/288)+.125*floor((a-40)/10);
+    return he*we/288;
+    
+}
+float Wsize(float wei,float ag){  //weight,age
+    if(ag>=30) return (wei/5.7)+.1*floor((ag-28)/2);
+    else return wei/5.7;
 }
 
-int main(int argc, const char * argv[]) {
- 
-    return 0;
+int main() {
+    float weight,height,age;
+    cout<<"Weight in pounds :"<<endl;
+    cin>>weight;
+    cout<<"height in inches : "<<endl;
+    cin>>height;
+    cout<<"Age in years : "<<endl;
+    cin>>age;
+    cout<<endl;
+    cout<<"Your Hsize is "<<Hsize(weight,height)<<endl;
+    cout<<"Your jacket size (chest in inches) is "<<Jsize(weight,height,age)<<endl;
+    cout<<"Your waist size is: "<<Wsize(weight,age);
+    cout<<"Goodbye.";
+    
 }
+
