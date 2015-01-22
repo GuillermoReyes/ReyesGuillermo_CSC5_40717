@@ -18,6 +18,17 @@ int main(int argc, const char * argv[]) {
     
     cout<<"What is the amount of a specific stock that you own?";
     cin>>amount;
+    cout<<"Whole dollar value of stock : "<<endl;
+    cin>>whole;
+    cout<<"Numerator of frational part : ";
+    cin>>num;
+    cout<<"Denominator of fractional part : "<<endl;
+    cin>>den;
+    
+    
+       //Convert integer values to floats
+    cout<<"The complete value is : $"<<amount*(whole+static_cast<float>(num)/den)<<endl;
+    
     
 
     return 0;
