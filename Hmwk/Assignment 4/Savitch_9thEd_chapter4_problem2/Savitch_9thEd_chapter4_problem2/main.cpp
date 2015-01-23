@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -21,13 +22,13 @@ float Jsize(float we, float he,float a) { //weight,height,age
     return he*we/288;
     
 }
-float Wsize(float wei,float ag){  //weight,age
-    if(ag>=30) return (wei/5.7)+.1*floor((ag-28)/2);
-    else return wei/5.7;
-}
+
 
 int main() {
     float weight,height,age;
+    char choose;
+    do {
+    
     cout<<"Weight in pounds :"<<endl;
     cin>>weight;
     cout<<"height in inches : "<<endl;
@@ -35,10 +36,22 @@ int main() {
     cout<<"Age in years : "<<endl;
     cin>>age;
     cout<<endl;
+    cout<<fixed<<showpoint<<setprecision(0);
     cout<<"Your Hsize is "<<Hsize(weight,height)<<endl;
     cout<<"Your jacket size (chest in inches) is "<<Jsize(weight,height,age)<<endl;
-    cout<<"Your waist size is: "<<Wsize(weight,age);
-    cout<<"Goodbye.";
+    float Wsize = weight/5.7;
+    if(age>=30){
+        Wsize=(weight/5.7)+.1*floor((age-28)/2);
+    }
+    cout<<"Your waist size is: "<<Wsize<<endl;
+        
+        
+    
+    char choose;
+    cout<<"Would you like to try again? [Y/N]"<<endl;
+    cin>>choose;
+    } while(choose=='y'||choose=='Y');
+    
     
 }
 
