@@ -27,6 +27,7 @@ float Jsize(float we, float he,float a) { //weight,height,age
 int main() {
     float weight,height,age;
     char choose;
+    float Wsize = weight/5.7;
     do {
     
     cout<<"Weight in pounds :"<<endl;
@@ -39,7 +40,7 @@ int main() {
     cout<<fixed<<showpoint<<setprecision(0);
     cout<<"Your Hsize is "<<Hsize(weight,height)<<endl;
     cout<<"Your jacket size (chest in inches) is "<<Jsize(weight,height,age)<<endl;
-    float Wsize = weight/5.7;
+   
     if(age>=30){
         Wsize=(weight/5.7)+.1*floor((age-28)/2);
     }
@@ -47,11 +48,12 @@ int main() {
         
         
     
-    char choose;
+   
     cout<<"Would you like to try again? [Y/N]"<<endl;
     cin>>choose;
     } while(choose=='y'||choose=='Y');
     
+    return 0;
     
 }
 
