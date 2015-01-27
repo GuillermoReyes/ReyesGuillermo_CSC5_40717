@@ -35,9 +35,9 @@ int main(int argc, char** argv) {
 
 float retirement(float p,float i,float d,int n){
     for(int year=1;year<=n;year++){
-        p=(1+i);
+        p*=(1+i);
         p+=d;
-        
+        return p;
     }
-    return p;
+    
 }
