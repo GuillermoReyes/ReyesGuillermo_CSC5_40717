@@ -16,7 +16,9 @@ void moneyCount(int a ){
 using namespace std;
 
 int main(int argc, char** argv) {
-    string leveloneQ[]={"What is the capital of California,"
+    
+    char response;
+    string leveloneQ[]={"What is the capital of California",
                         "Which president approved the FHA Reverse Mortgage?",
                         "Which Inventor discovered Alternating current ?",
                         "Macintosh and Linux are ____ based",
@@ -26,17 +28,25 @@ int main(int argc, char** argv) {
                         "Who wrote the code for apple when it was a start-up",
                         "Canada is North of ",
                         "Harry Potter has a scar on his ___"};
-    char oneResp[]={"a. Sacramento b.Hawaii c.Stanford d.Topeka.",
-                         "a.Barrack Obama b.JFK c.Reagan d.FDR ",
-                         "a.Thomas Edision b.Tesla c.Jeff d.Fourier",
-                         "a.MS-DOS b.FAT32 c.UNIX d.Code ",
-                         "a.True b.False",
-                         "a.Kim Jong Un b.Kim il Un c.Kim Young Sam d.Roh Tae-Woo",
-                         "a.Warren Buffet b.Henry Ford c.Richard Branson d.Al sharpton",
-                         "a.Steve jobs b.Tim Cook c.Steve Wozniak d.Bill Gates",
-                         "a.United states b.Russia c. Japan d. Australia",
-                         "a. Arm  b.Leg c.Toe d.Forehead "};
-    char oneansw[] = {"a","c","b","c","b","a","b","c","a","d"};
+    string oneResp[]={"1. Sacramento 2.Hawaii 3.Stanford 4.Topeka.",
+                         "1.Barrack Obama 2.JFK 3.Reagan 4.FDR ",
+                         "1.Thomas Edision 2.Tesla 3.Jeff 4.Fourier",
+                         "1.MS-DOS 2.FAT32 3.UNIX 4.Code ",
+                         "1.True 2.False",                         
+                         "1.Kim Jong Un 2.Kim il Un 3.Kim Young Sam 4.Roh Tae-Woo",
+                         "1.Warren Buffet 2.Henry Ford 3.Richard Branson 4.Al sharpton",
+                         "1.Steve jobs 2.Tim Cook 3.Steve Wozniak 4.Bill Gates",
+                         "1.United states 2.Russia 3. Japan 4. Australia",
+                         "1. Arm  2.Leg 3.Toe 4.Forehead "};
+    char oneansw[] = {1,3,2,3,2,1,2,3,1,4};
+    for(int i=0;i<=0;i++){
+        cout<<leveloneQ[i]<<oneResp[i]<<oneansw[i]<<endl;
+        cin>>response;
+        if(response==oneansw[i]){
+            cout<<"corect"<<endl;
+        }
+        else cout<<"error"<<endl;
+    }
     return 0;
 }
 
