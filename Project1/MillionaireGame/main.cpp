@@ -12,12 +12,23 @@
 void moneyCount(int a ){
     
 }
+void leveltwo(float a){
+    string leveltwo[]={"who took the road less traveled by ?",
+                       "Who discovered Radium, consequently receiving radiation ?",
+                       "Which po artist was iconic in the 60's",
+                       ""
+            
+}
 
 using namespace std;
 
 int main(int argc, char** argv) {
+    cout<<"Welcome to 'Who wants to become a millionaire'\n";
+    cout<<"simply input the number that corresponds to the correct answer\n";
+    cout<<"Rules of the game: \n";
     
-    char response;
+    
+   int response;
     string leveloneQ[]={"What is the capital of California",
                         "Which president approved the FHA Reverse Mortgage?",
                         "Which Inventor discovered Alternating current ?",
@@ -39,14 +50,12 @@ int main(int argc, char** argv) {
                          "1.United states 2.Russia 3. Japan 4. Australia",
                          "1. Arm  2.Leg 3.Toe 4.Forehead "};
     char oneansw[] = {1,3,2,3,2,1,2,3,1,4};
-    for(int i=0;i<=0;i++){
-        cout<<leveloneQ[i]<<oneResp[i]<<oneansw[i]<<endl;
-        cin>>response;
-        if(response==oneansw[i]){
-            cout<<"corect"<<endl;
-        }
-        else cout<<"error"<<endl;
+    cout<<leveloneQ[0]<<" "<<oneResp[0]<<endl;
+    cin>>response;
+    if(response==oneansw[0]){
+        cout<<"correct"<<endl;
     }
+    else cout<<"You are wrong .."<<endl;
     return 0;
 }
 
