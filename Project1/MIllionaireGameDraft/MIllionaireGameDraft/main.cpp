@@ -15,6 +15,7 @@ using namespace std;
 void moneyCount(int a ){
     
 }
+//level two questions
 void leveltwo(char a){
     string leveltwo[]= {"who took the road less traveled by ?",
         "Who discovered Radium, consequently receiving radiation ?",
@@ -34,11 +35,12 @@ void leveltwo(char a){
                         "1.True 2.False",
                         "1.July 4 1774, 2.July 4 1775 3. July 4 1886 4. July 4 1776",
                         "1.Yes 2.No",
-                        "1.George Bush 2.Andrew Johnson 3.Richard Nixon 4.JFK",
+                        "1.George Bush 2.Andrew Johnson 3.Richard Nixon 4.JFK"};
             char (twoansw[])= {4,1,2,1,4,1,4,2,4};
-        };
+        }
     
-    void levelthree(char a) {
+//Level three questions
+void levelthree(char a) {
         string levelthree[]={"Pointillism was pioneered by which impressionist artist",
                              "what is the average student loan debt ?",
                              "What phrase does Wi-Fi represent ?",
@@ -46,7 +48,7 @@ void leveltwo(char a){
                              "The Size of state representaties per state is determined by : ",
                              "Which south Park character was known to ressurect frm death after each episode?",
                              "Which of the following is a famous engineer :",
-                             "Finish the phrase. ONe with the courage to _, is the master of the world. "}
+                            "Finish the phrase. ONe with the courage to _, is the master of the world. "};
         string threeResp[]={ "1.George Seurat 2.Van Gogh 3.Piasso 4.Charled de Moine",
                              "1.$0 2.$29,400 3.$50,000 4.$66,300 ",
                              "1.Wireless Finder 2.wireless fidelity 3.nothing at all 4.Wireless information",
@@ -54,17 +56,45 @@ void leveltwo(char a){
                              "1.GDP 2.a Fixed number 3.State size 4.State population",
                              "1.Kenny 2.Stan 3.kyle 4.Eric Cartman",
                              "1. Neil Degrasse Tyson 2.Warren Buffet 3.Adam Savage 4.Tory Bellecci (MythBusters)",
-                             "1.conquer 2.perservere 3.laugh 4.cry",}
-        int answ[]        =  {1,2,3,2,4,1,2,3}
+                             "1.conquer 2.perservere 3.laugh 4.cry",};
+        int answ[]        =  {1,2,3,2,4,1,2,3};
             
         
         
     }
-    void levelFour(){
-        
-    }
+//Level four questions
+void levelFour(){
+        string levelFour[]= {"What does Alt-J's (band) name stands for ",
+                                "Gibbs free energy is ",
+                                "A _ Magentif field can induce an eletric field",
+                                "The three types of fores are Gravitational, electrostatic, and _",
+                                "An object traveling objet at constant velocity has forces that sum to ",
+                                "Which author made humpty dumpty famous? ",
+                                "This drug lord gained politial power in colombia",
+                                "The unites states illegalized __ ",
+                                "Which of the following is the state bird of Oregon ?",
+                                "U2 is known for being a pioneer in the __ movement. ",};
+        string fourRes[]= {"1.Entropy 2.no signifiance 3.copy-paste 4.Triange ",
+                            "1.change in temperature 2.Energy available 3.Energy formation 4.Measure of perpetual motion",
+                            "1.constant 2.linear 3.variable 4.dynamic",
+                            "1.the velocity 2.the force causing velocity. 3.the gravitational force 4.0 ",
+                            "1.Lewis Carroll 2. Walt whitman 3.Ralph Reed 4.Jean Babtiste",
+                            "1.Fidel Castro 2.Pablo Escobar 3.Amado Carillo Fuentes 4.Frank Lucas",
+                            "1.Slavery 2.women's voting restritons 3.The Draft 4.Kinder Eggs ",
+                            "1.Blue Jay 2.Yellow Tit 3.Crow 4.Western Meadowlark",
+                            "1.Post-Punk 2.Progressive Rock 3.Easy Listening 4.Punk"};
+        int answ =    {1,2,3,4,1,2,3,4,1};
             
-        }
+        
+            
+    }
+//Level five questions
+void leelFive(){
+    string levelfive[] = {"Which head of state recently claimed “white, blue-eyed bankers have brought the world economy to its knees”? ",
+                         "
+}
+            
+
         
         using namespace std;
         
