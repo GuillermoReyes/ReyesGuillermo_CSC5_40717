@@ -35,7 +35,7 @@ void leveltwo(char a){
                         "1.July 4 1774, 2.July 4 1775 3. July 4 1886 4. July 4 1776",
                         "1.Yes 2.No",
                         "1.George Bush 2.Andrew Johnson 3.Richard Nixon 4.JFK",
-            char twoansw[]= {4,1,2,1,4,1,4,2,4};
+            char (twoansw[])= {4,1,2,1,4,1,4,2,4};
         };
     
     void levelthree(char a) {
@@ -44,10 +44,25 @@ void leveltwo(char a){
                              "What phrase does Wi-Fi represent ?",
                              "California is an affirmative action state. ",
                              "The Size of state representaties per state is determined by : ",
-                             "
+                             "Which south Park character was known to ressurect frm death after each episode?",
+                             "Which of the following is a famous engineer :",
+                             "Finish the phrase. ONe with the courage to _, is the master of the world. "}
+        string threeResp[]={ "1.George Seurat 2.Van Gogh 3.Piasso 4.Charled de Moine",
+                             "1.$0 2.$29,400 3.$50,000 4.$66,300 ",
+                             "1.Wireless Finder 2.wireless fidelity 3.nothing at all 4.Wireless information",
+                             "1.True 2.False",
+                             "1.GDP 2.a Fixed number 3.State size 4.State population",
+                             "1.Kenny 2.Stan 3.kyle 4.Eric Cartman",
+                             "1. Neil Degrasse Tyson 2.Warren Buffet 3.Adam Savage 4.Tory Bellecci (MythBusters)",
+                             "1.conquer 2.perservere 3.laugh 4.cry",}
+        int answ[]        =  {1,2,3,2,4,1,2,3}
+            
+        
         
     }
-    
+    void levelFour(){
+        
+    }
             
         }
         
