@@ -91,7 +91,11 @@ void levelFour(){
 //Level five questions
 void leelFive(){
     string levelfive[] = {"Which head of state recently claimed “white, blue-eyed bankers have brought the world economy to its knees”? ",
-                         "
+                         "Daylight savings was developed to ",
+                         "in the 90's The ATF and FBI were involved in a stand-off with ",
+                         "Which state legally allows underage drinking ",
+                         "what is the minimum age to serve in congress ?",
+                         "In Japan, it is custumary to "
 }
             
 
