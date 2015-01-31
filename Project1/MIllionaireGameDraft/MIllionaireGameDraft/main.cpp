@@ -16,8 +16,8 @@ void moneyCount(int a ){
     
 }
 //Level oone questions
-void levelone(){
- 
+void levelone(int x){
+    int choice;
     
 
     
@@ -45,6 +45,13 @@ void levelone(){
         "1. Arm  2.Leg 3.Temple 4.Forehead "};
     //Answers
     int oneansw[] = {1,3,2,3,2,1,2,3,1,4};
+    
+    cout<<leveloneQ[x]<<endl;
+    cout<<oneResp[x]<<endl;
+    cin>>choice;
+    if(choice==oneansw[x]) cout<<"Congratuilations .";
+    else cout<<"Sorry that is incorrect";
+    
 }
 
 
@@ -154,18 +161,16 @@ void leelFive(){
     
 
         
-        int main(int argc, char** argv) {
-            //Output rules of the games
-            cout<<"Welcome to 'Who wants to become a millionaire'\n";
-            cout<<"simply input the number that corresponds to the correct answer\n";
-            cout<<"Rules of the game: \n";
-            //Set random seed
-            srand(static_cast<unsigned int>(time(0)));
-            int extract;
-            extract= rand()%10;
-            cout<<extract<<endl;
-            
-            
+int main(int argc, char** argv) {
+       //Generate random number seed
+     srand(static_cast<unsigned int>(time(0)));
+    //Variable that will choose which question
+    int extract;
+     extract= rand()%10;
+    cout<<extract<<endl;
+    levelone(extract);
+    
+    
         
             return 0;
         }
