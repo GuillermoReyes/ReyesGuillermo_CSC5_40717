@@ -18,10 +18,11 @@ void moneyCount(int a ){
 //Level oone questions
 void levelone(int x){
     int choice;
-    
+    //Initialize array
 
     
     //questions
+    
     string leveloneQ[]={"What is the capital of California",
         "Which president approved the FHA Reverse Mortgage?",
         "Which Inventor discovered Alternating current ?",
@@ -30,8 +31,8 @@ void levelone(int x){
         "Which Korean leader was featured in the recent film 'The Interview'",
         "___ pioneered mass production vehicles and made billions. ",
         "Who wrote the code for apple when it was a start-up",
-        "Canada is North of ",
-        "Harry Potter has a scar on his ___"};
+        "Canada is North of ",};
+       
     //options
     string oneResp[]={"1. Sacramento 2.Hawaii 3.Stanford 4.Topeka.",
         "1.Barrack Obama 2.JFK 3.Reagan 4.FDR ",
@@ -41,8 +42,8 @@ void levelone(int x){
         "1.Kim Jong Un 2.Kim il Un 3.Kim Young Sam 4.Roh Tae-Woo",
         "1.Warren Buffet 2.Henry Ford 3.Richard Branson 4.Al sharpton",
         "1.Steve jobs 2.Tim Cook 3.Steve Wozniak 4.Bill Gates",
-        "1.United states 2.Russia 3. Japan 4. Australia",
-        "1. Arm  2.Leg 3.Temple 4.Forehead "};
+        "1.United states 2.Russia 3. Japan 4. Australia",};
+       
     //Answers
     int oneansw[] = {1,3,2,3,2,1,2,3,1,4};
     
@@ -57,7 +58,9 @@ void levelone(int x){
 
 
 //level two questions
-void leveltwo(char a){
+void leveltwo(int x){
+    //variable for user to respond
+    int choice;
     string leveltwo[]= {"who took the road less traveled by ?",
         "Who discovered Radium, consequently receiving radiation ?",
         "Galileo invented the telescope",
@@ -78,10 +81,16 @@ void leveltwo(char a){
                         "1.Yes 2.No",
                         "1.George Bush 2.Andrew Johnson 3.Richard Nixon 4.JFK"};
             int (twoansw[])= {4,1,2,1,4,1,4,2,4};
+    cout<<leveltwo[x]<<endl;
+    cout<<twoResp[x]<<endl;
+    cin>>choice;
+    if(choice==twoansw[x]) cout<<"Congratuilations .";
+    else cout<<"Sorry that is incorrect";
         }
     
 //Level three questions
-void levelthree(char a) {
+void levelthree(int x) {
+    int choice;
         string levelthree[]={"Pointillism was pioneered by which impressionist artist",
                              "what is the average student loan debt ?",
                              "What phrase does Wi-Fi represent ?",
@@ -100,12 +109,18 @@ void levelthree(char a) {
                              "1. Neil Degrasse Tyson 2.Warren Buffet 3.Adam Savage 4.Tory Bellecci (MythBusters)",
                              "1.conquer 2.perservere 3.laugh 4.cry",};
         int answ[]        =  {1,2,3,2,4,1,2,3};
-            
+        cout<<levelthree[x]<<endl;
+        cout<<threeResp[x]<<endl;
+        cin>>choice;
+        if(choice==answ[x]) cout<<"Congratuilations .";
+        else cout<<"Sorry that is incorrect";
+
         
         
     }
 //Level four questions
-void levelFour(){
+void levelFour(int x){
+    int choice;
         string levelFour[]= {"What does Alt-J's (band) name stands for ",
                                 "Gibbs free energy is ",
                                 "A _ Magentif field can induce an eletric field",
@@ -126,12 +141,19 @@ void levelFour(){
                             "1.Blue Jay 2.Yellow Tit 3.Crow 4.Western Meadowlark",
                             "1.Post-Punk 2.Progressive Rock 3.Easy Listening 4.Punk"};
         int answ[] =    {1,2,3,4,1,2,3,4,1};
-            
-        
-            
+        cout<<levelFour[x]<<endl;
+        cout<<fourRes[x]<<endl;
+        cin>>choice;
+        if(choice==answ[x]) cout<<"Congratuilations .";
+        else cout<<"Sorry that is incorrect";
+   
+    
+    
     }
 //Level five questions
-void leelFive(){
+int levelFive(int x){
+    //User chooses what option
+    int choice;
     string levelfive[] = {"Which head of state recently claimed “white, blue-eyed bankers have brought the world economy to its knees”? ",
                          "Daylight savings was developed to ",
                          "in the 90's The ATF and FBI were involved in a stand-off with ",
@@ -150,26 +172,40 @@ void leelFive(){
                         "1.Ankara and Athens 2.Paris and Instanbul 3.Maine and Iowa 4.Beijing and Tokyo",
                         "1.D andQ 2.S and T 3.Q and Z 4.H and R",
                         "1.Science of shopping 2.Science of prehistoric fish 3.Scinece of Kissing 4.Statistial coincidences"};
-    char answ[]     =  {1,2,3,1,4,1,2,3,3};
+    int answ[]     =  {1,2,3,1,4,1,2,3,3};
     
-        
+    cout<<levelfive[x]<<endl;
+    cout<<fiveRes[x]<<endl;
+    cin>>choice;
+    if(choice==answ[x]) cout<<"Congratuilations .";
+    else cout<<"Sorry that is incorrect";
+    if(choice==answ[x]) return 1;
+    else return 2;
+    
 
  
 }
     
 
-    
-
-        
 int main(int argc, char** argv) {
-       //Generate random number seed
-     srand(static_cast<unsigned int>(time(0)));
-    //Variable that will choose which question
-    int extract;
-     extract= rand()%10;
-    cout<<extract<<endl;
-    levelone(extract);
-    
+    int points = 3;
+   //Generate random number seed
+    srand(static_cast<unsigned int>(time(0)));
+    //Randomly chooses which question to display
+    //does each leel three times
+    int i = 0;
+    while(i<=3){
+       
+    int Q = rand()%10;
+    cout<<Q<<endl;
+    levelFive(Q);
+        if(levelFive(Q)==2){
+            int count=points-1;
+            
+            i++;
+        
+        }
+       
     
         
             return 0;
@@ -177,4 +213,4 @@ int main(int argc, char** argv) {
 
 
 
-
+}
