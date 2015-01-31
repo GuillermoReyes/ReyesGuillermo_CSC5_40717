@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MIllionaireGameDraft/main.cpp"
-            timestampString = "444331172.011154"
+            timestampString = "444367033.265089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "leveltwo(char a)"
-            landmarkType = "7">
+            startingLineNumber = "69"
+            endingLineNumber = "69">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MIllionaireGameDraft/main.cpp"
-            timestampString = "444331174.91708"
+            timestampString = "444367033.265089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "leveltwo(char a)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,13 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MIllionaireGameDraft/main.cpp"
-            timestampString = "444340134.400595"
+            timestampString = "444367033.265089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "leveltwo(char a)"
-            landmarkType = "7">
+            startingLineNumber = "68"
+            endingLineNumber = "68">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -15,6 +15,33 @@ using namespace std;
 void moneyCount(int a ){
     
 }
+//Level oone questions
+void levelone(){
+    string leveloneQ[]={"What is the capital of California",
+        "Which president approved the FHA Reverse Mortgage?",
+        "Which Inventor discovered Alternating current ?",
+        "Macintosh and Linux are ____ based",
+        "Europe is a country.",
+        "Which Korean leader was featured in the recent film 'The Interview'",
+        "___ pioneered mass production vehicles and made billions. ",
+        "Who wrote the code for apple when it was a start-up",
+        "Canada is North of ",
+        "Harry Potter has a scar on his ___"};
+    string oneResp[]={"1. Sacramento 2.Hawaii 3.Stanford 4.Topeka.",
+        "1.Barrack Obama 2.JFK 3.Reagan 4.FDR ",
+        "1.Thomas Edision 2.Tesla 3.Jeff 4.Fourier",
+        "1.MS-DOS 2.FAT32 3.UNIX 4.Code ",
+        "1.True 2.False",
+        "1.Kim Jong Un 2.Kim il Un 3.Kim Young Sam 4.Roh Tae-Woo",
+        "1.Warren Buffet 2.Henry Ford 3.Richard Branson 4.Al sharpton",
+        "1.Steve jobs 2.Tim Cook 3.Steve Wozniak 4.Bill Gates",
+        "1.United states 2.Russia 3. Japan 4. Australia",
+        "1. Arm  2.Leg 3.Temple 4.Forehead "};
+    int oneansw[] = {1,3,2,3,2,1,2,3,1,4};
+}
+
+
+
 //level two questions
 void leveltwo(char a){
     string leveltwo[]= {"who took the road less traveled by ?",
@@ -36,7 +63,7 @@ void leveltwo(char a){
                         "1.July 4 1774, 2.July 4 1775 3. July 4 1886 4. July 4 1776",
                         "1.Yes 2.No",
                         "1.George Bush 2.Andrew Johnson 3.Richard Nixon 4.JFK"};
-            char (twoansw[])= {4,1,2,1,4,1,4,2,4};
+            int (twoansw[])= {4,1,2,1,4,1,4,2,4};
         }
     
 //Level three questions
@@ -83,7 +110,7 @@ void levelFour(){
                             "1.Slavery 2.women's voting restritons 3.The Draft 4.Kinder Eggs ",
                             "1.Blue Jay 2.Yellow Tit 3.Crow 4.Western Meadowlark",
                             "1.Post-Punk 2.Progressive Rock 3.Easy Listening 4.Punk"};
-        int answ =    {1,2,3,4,1,2,3,4,1};
+        int answ[] =    {1,2,3,4,1,2,3,4,1};
             
         
             
@@ -95,11 +122,28 @@ void leelFive(){
                          "in the 90's The ATF and FBI were involved in a stand-off with ",
                          "Which state legally allows underage drinking ",
                          "what is the minimum age to serve in congress ?",
-                         "In Japan, it is custumary to "
-}
-            
-
+                         "Which is the only U.S. state to produce coffee?",
+                         "What two cities were linked by the Orient Express?",
+                        "What are the only two letters that are not on a telphone dial?",
+                        "What is philematology?"};
+    string fiveRes[] = {"1.Luiz Inácio Lula da Silva 2.Diane Feinstein 3.Vladimir Putin 4.Enriqur Pena Nieto ",
+                        "1.make farming efficient 2.Save energy 3.honor the gods 4.Adjust to the seasons",
+                        "1.Civilians in south central Los Angeles 2.The Crips 3.Waco religous cult 4.Boston bombers",
+                        "1.Alaska 2.California 3.Florida 4.Rhode Island",
+                        "1.35 2.18 3.30 4.25 ",
+                        "1.Hawaii 2.Kansas. 3.Washington 4.Nebraska",
+                        "1.Ankara and Athens 2.Paris and Instanbul 3.Maine and Iowa 4.Beijing and Tokyo",
+                        "1.D andQ 2.S and T 3.Q and Z 4.H and R",
+                        "1.Science of shopping 2.Science of prehistoric fish 3.Scinece of Kissing 4.Statistial coincidences"};
+    char answ[]     =  {1,2,3,1,4,1,2,3,3};
+    
         
+
+ 
+}
+    
+
+    
         using namespace std;
         
         int main(int argc, char** argv) {
@@ -107,35 +151,7 @@ void leelFive(){
             cout<<"simply input the number that corresponds to the correct answer\n";
             cout<<"Rules of the game: \n";
             
-            
-            int response;
-            string leveloneQ[]={"What is the capital of California",
-                "Which president approved the FHA Reverse Mortgage?",
-                "Which Inventor discovered Alternating current ?",
-                "Macintosh and Linux are ____ based",
-                "Europe is a country.",
-                "Which Korean leader was featured in the recent film 'The Interview'",
-                "___ pioneered mass production vehicles and made billions. ",
-                "Who wrote the code for apple when it was a start-up",
-                "Canada is North of ",
-                "Harry Potter has a scar on his ___"};
-            string oneResp[]={"1. Sacramento 2.Hawaii 3.Stanford 4.Topeka.",
-                "1.Barrack Obama 2.JFK 3.Reagan 4.FDR ",
-                "1.Thomas Edision 2.Tesla 3.Jeff 4.Fourier",
-                "1.MS-DOS 2.FAT32 3.UNIX 4.Code ",
-                "1.True 2.False",
-                "1.Kim Jong Un 2.Kim il Un 3.Kim Young Sam 4.Roh Tae-Woo",
-                "1.Warren Buffet 2.Henry Ford 3.Richard Branson 4.Al sharpton",
-                "1.Steve jobs 2.Tim Cook 3.Steve Wozniak 4.Bill Gates",
-                "1.United states 2.Russia 3. Japan 4. Australia",
-                "1. Arm  2.Leg 3.Temple 4.Forehead "};
-            char oneansw[] = {1,3,2,3,2,1,2,3,1,4};
-            cout<<leveloneQ[0]<<" "<<oneResp[0]<<endl;
-            cin>>response;
-            if(response==oneansw[0]){
-                cout<<"correct"<<endl;
-            }
-            else cout<<"You are wrong .."<<endl;
+        
             return 0;
         }
 
