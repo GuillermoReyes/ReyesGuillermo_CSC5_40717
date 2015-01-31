@@ -9,8 +9,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
-#include <stdlib.h>
-#include <stdio.h>
 
 using namespace std;
 //Counts the  money gained from playing who wants to be a millionaire
@@ -85,7 +83,8 @@ void levelthree(char a) {
                              "Which south Park character was known to ressurect frm death after each episode?",
                              "Which of the following is a famous engineer :",
                             "Finish the phrase. ONe with the courage to _, is the master of the world. "};
-        string threeResp[]={ "1.George Seurat 2.Van Gogh 3.Piasso 4.Charled de Moine",
+    //level three options
+    string threeResp[]={ "1.George Seurat 2.Van Gogh 3.Piasso 4.Charled de Moine",
                              "1.$0 2.$29,400 3.$50,000 4.$66,300 ",
                              "1.Wireless Finder 2.wireless fidelity 3.nothing at all 4.Wireless information",
                              "1.True 2.False",
@@ -156,12 +155,15 @@ void leelFive(){
 
         
         int main(int argc, char** argv) {
+            //Output rules of the games
             cout<<"Welcome to 'Who wants to become a millionaire'\n";
             cout<<"simply input the number that corresponds to the correct answer\n";
             cout<<"Rules of the game: \n";
+            //Set random seed
             srand(static_cast<unsigned int>(time(0)));
-            int x  =rand()%10;
-            cout<<x<<endl;
+            int extract;
+            extract= rand()%10;
+            cout<<extract<<endl;
             
             
         
