@@ -9,6 +9,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
+#include <stdlib.h>
+#include <stdio.h>
 
 using namespace std;
 //Counts the  money gained from playing who wants to be a millionaire
@@ -17,6 +19,11 @@ void moneyCount(int a ){
 }
 //Level oone questions
 void levelone(){
+ 
+    
+
+    
+    //questions
     string leveloneQ[]={"What is the capital of California",
         "Which president approved the FHA Reverse Mortgage?",
         "Which Inventor discovered Alternating current ?",
@@ -27,6 +34,7 @@ void levelone(){
         "Who wrote the code for apple when it was a start-up",
         "Canada is North of ",
         "Harry Potter has a scar on his ___"};
+    //options
     string oneResp[]={"1. Sacramento 2.Hawaii 3.Stanford 4.Topeka.",
         "1.Barrack Obama 2.JFK 3.Reagan 4.FDR ",
         "1.Thomas Edision 2.Tesla 3.Jeff 4.Fourier",
@@ -37,6 +45,7 @@ void levelone(){
         "1.Steve jobs 2.Tim Cook 3.Steve Wozniak 4.Bill Gates",
         "1.United states 2.Russia 3. Japan 4. Australia",
         "1. Arm  2.Leg 3.Temple 4.Forehead "};
+    //Answers
     int oneansw[] = {1,3,2,3,2,1,2,3,1,4};
 }
 
@@ -144,12 +153,16 @@ void leelFive(){
     
 
     
-        using namespace std;
+
         
         int main(int argc, char** argv) {
             cout<<"Welcome to 'Who wants to become a millionaire'\n";
             cout<<"simply input the number that corresponds to the correct answer\n";
             cout<<"Rules of the game: \n";
+            srand(static_cast<unsigned int>(time(0)));
+            int x  =rand()%10;
+            cout<<x<<endl;
+            
             
         
             return 0;
