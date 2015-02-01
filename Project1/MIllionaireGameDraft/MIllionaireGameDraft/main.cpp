@@ -354,12 +354,14 @@ int main(int argc, char** argv) {
             count=1;
         }
         sum+=count;
+        if(sum<2) continue;
+       
     }
-    if(sum<=2){
+    if(sum<2){
         cout<<endl;
        
     }
-    else{
+    if(sum>=2){
         cout<<"You Have lost the game.Goodbye. Try Agian"<<endl;
     }
 
@@ -390,11 +392,11 @@ int main(int argc, char** argv) {
         }
         sum1+=count;
     }while(j<=2);
-    if(sum1<=2){
+    if(sum1<2){
         cout<<endl;
         
     }
-    else{
+    if(sum1>=2){
         cout<<"Sorry, you have lost. Try Again. "<<endl;
         exit(0);
     }
@@ -427,10 +429,10 @@ int main(int argc, char** argv) {
         sum2+=count;
     }
     
-    if(sum2<=1){
+    if(sum2<1){
         cout<<endl;
     }
-    else {
+    if(sum2>1) {
         cout<<"You Have lost. Restart the game"<<endl;
         exit(0);
         
@@ -459,6 +461,7 @@ int main(int argc, char** argv) {
             count=1;
         }
         sum3+=count;
+        if(sum3<2) continue;
     }
     if(sum3<=2){
         cout<<endl;
