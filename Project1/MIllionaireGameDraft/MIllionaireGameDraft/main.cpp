@@ -220,9 +220,20 @@ int main(int argc, char** argv) {
   }
     cout<<"safe"<<endl;
     cout<<"YOu have made it to the next round."<<endl;
+    int j=0;
     do{
         
-    }
+        j++;
+        int loss1=leveltwo(0);
+        int count1;
+        count1+=loss1;
+        if(count1>=2){
+            cout<<"You have lost."<<endl;
+            
+        }
+    }while(j<=2);
+    cout<<"safe"<<endl;
+    
     return 0;
 }
 
