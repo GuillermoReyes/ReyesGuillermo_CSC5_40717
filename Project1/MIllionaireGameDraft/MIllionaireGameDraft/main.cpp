@@ -264,7 +264,7 @@ int main(int argc, char** argv) {
         "1.Yes 2.No",
         "1.George Bush 2.Andrew Johnson 3.Richard Nixon 4.JFK"};
     //Level two answers
-    int (twoansw[])= {4,1,2,1,4,2,4,2,4};
+    int (twoansw[])= {4,1,2,1,4,2,4,2,3};
     string levelthree[]={"Pointillism was pioneered by which impressionist artist",
         "what is the average student loan debt ?",
         "What phrase does Wi-Fi represent ?",
@@ -354,17 +354,17 @@ int main(int argc, char** argv) {
             count=1;
         }
         sum+=count;
-        if(sum<2) continue;
-       
-    }
+      
+    
     if(sum<2){
         cout<<endl;
        
     }
     if(sum>=2){
         cout<<"You Have lost the game.Goodbye. Try Agian"<<endl;
+        
     }
-
+    }
     
     cout<<"You have made it to level two"<<endl;
     cout<<"You can only miss two still, but the questions may be of slight difficulty"<<endl;
@@ -390,7 +390,7 @@ int main(int argc, char** argv) {
             cout<<"Sorry that is incorrect";
             count=1;
         }
-        sum1+=count;
+        sum+=count;
     }while(j<=2);
     if(sum1<2){
         cout<<endl;
@@ -398,8 +398,7 @@ int main(int argc, char** argv) {
     }
     if(sum1>=2){
         cout<<"Sorry, you have lost. Try Again. "<<endl;
-        exit(0);
-    }
+        }
     cout<<"You  have made it to level three!!"<<endl;
     cout<<"This time you can only miss one !!"<<endl;
     cout<<"Questions will also rise in difficulty"<<endl;
@@ -426,7 +425,7 @@ int main(int argc, char** argv) {
             count=1;
         }
 
-        sum2+=count;
+        sum+=count;
     }
     
     if(sum2<1){
@@ -434,7 +433,7 @@ int main(int argc, char** argv) {
     }
     if(sum2>1) {
         cout<<"You Have lost. Restart the game"<<endl;
-        exit(0);
+       
         
     }
     cout<<"YOu have made it to level four !!!"<<endl;
@@ -460,16 +459,16 @@ int main(int argc, char** argv) {
             cout<<"Sorry that is incorrect";
             count=1;
         }
-        sum3+=count;
-        if(sum3<2) continue;
+        sum+=count;
+        if(sum<2) continue;
     }
-    if(sum3<=2){
+    if(sum<=2){
         cout<<endl;
         
     }
     else{
         cout<<"You Have lost the game.Goodbye. Try Agian"<<endl;
-        exit(0);
+        
     }
     cout<<"YOu have made it to the final level. According to the internet, these questions are difficult."<<endl;
     int sum4;
@@ -493,7 +492,7 @@ int main(int argc, char** argv) {
             cout<<"Sorry that is incorrect";
             count=1;
         }
-        sum4+=count;
+        sum+=count;
     }
     if(sum4<1){
         cout<<endl;
@@ -501,9 +500,10 @@ int main(int argc, char** argv) {
     }
     else{
         cout<<"You Have lost the game.Goodbye. Try Agian"<<endl;
-        exit(0);
+        
     }
     cout<<"Congratulations, you have won the game."<<endl;
+    cout<<"You Have won a total of "<<sum<< " dollars "<<endl;
     cout<<"You get to write your Initials on theleaderboard"<<endl;
 
     return 0;
