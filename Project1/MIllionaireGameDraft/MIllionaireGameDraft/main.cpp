@@ -242,7 +242,7 @@ int main(int argc, char** argv) {
         "1.United states 2.Russia 3. Japan 4. Australia",};
     
     //Answers
-    int oneansw[] = {1,3,2,3,2,1,2,3,1,4};
+    int oneansw[] = {1,3,2,3,2,1,2,3,1};
     //Level two questions
     string leveltwo[]= {"who took the road less traveled by ?",
         "Who discovered Radium, consequently receiving radiation ?",
@@ -286,8 +286,8 @@ int main(int argc, char** argv) {
     int answ3[]        =  {1,2,3,2,4,1,2,3};
     //LEvel four questions
     string levelFour[]= {"What does Alt-J's (band) name stands for ",
-        "Gibbs free energy is ",
-        "A _ Magentif field can induce an eletric field",
+        "Gibbs free energy is most losely related to ",
+        "A _ Magentic field can induce an eletric field",
         "The three types of fores are Gravitational, electrostatic, and _",
         "An object traveling objet at constant velocity has forces that sum to ",
         "Which author made humpty dumpty famous? ",
@@ -299,14 +299,15 @@ int main(int argc, char** argv) {
     string fourRes[]= {"1.Entropy 2.no signifiance 3.copy-paste 4.Triange ",
         "1.change in temperature 2.Energy available 3.Energy formation 4.Measure of perpetual motion",
         "1.constant 2.linear 3.variable 4.dynamic",
-        "1.the velocity 2.the force causing velocity. 3.the gravitational force 4.0 ",
+        "1.Nulear 2.Exo-molecular 3.Crystal Lattie forces 4.Fictional Forced ",
+        "1.the Velocity 2.Force of object pushing 3.Force due to acceleration of gravity 4.0",
         "1.Lewis Carroll 2. Walt whitman 3.Ralph Reed 4.Jean Babtiste",
         "1.Fidel Castro 2.Pablo Escobar 3.Amado Carillo Fuentes 4.Frank Lucas",
         "1.Slavery 2.women's voting restritons 3.The Draft 4.Kinder Eggs ",
         "1.Blue Jay 2.Yellow Tit 3.Crow 4.Western Meadowlark",
         "1.Post-Punk 2.Progressive Rock 3.Easy Listening 4.Punk"};
     //Level 4 answers
-    int answ4[] =    {1,2,3,4,1,2,3,4,1};
+    int answ4[] =    {1,2,3,1,4,1,2,4,4,1};
     //Level 5 questions
     string levelfive[] = {"Which head of state recently claimed “white, blue-eyed bankers have brought the world economy to its knees”? ",
         "Daylight savings was developed to ",
@@ -333,6 +334,8 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     //sum of fails
     int sum;
+    //Introdue game.
+    cout<<"For the first round, Questions answered corretly are awarded $500."<<endl;
     //loop count
     int i=0;
     while(i<=2){
@@ -347,11 +350,11 @@ int main(int argc, char** argv) {
         cin>>choice;
         if(choice==oneansw[x]) {
             cout<<"Congratuilations .";
-            count=0;
+            count=500;
         }
         else {
             cout<<"Sorry that is incorrect";
-            count=1;
+            count=0;
         }
         sum+=count;
       
@@ -360,14 +363,10 @@ int main(int argc, char** argv) {
         cout<<endl;
        
     }
-    if(sum>=2){
-        cout<<"You Have lost the game.Goodbye. Try Agian"<<endl;
-        
-    }
-    }
+        }
     
-    cout<<"You have made it to level two"<<endl;
-    cout<<"You can only miss two still, but the questions may be of slight difficulty"<<endl;
+    cout<<endl;
+    cout<<"You Have made it to level two, questions answered corretly are worth $1000."<<endl;
     //loop count
     int j=0;
     //keep track of losses
@@ -384,11 +383,11 @@ int main(int argc, char** argv) {
         cin>>choice;
         if(choice==twoansw[x]) {
             cout<<"Congratuilations .";
-            count=0;
+            count=1000;
         }
         else {
             cout<<"Sorry that is incorrect";
-            count=1;
+            count=0;
         }
         sum+=count;
     }while(j<=2);
@@ -396,12 +395,11 @@ int main(int argc, char** argv) {
         cout<<endl;
         
     }
-    if(sum1>=2){
-        cout<<"Sorry, you have lost. Try Again. "<<endl;
-        }
+   
     cout<<"You  have made it to level three!!"<<endl;
-    cout<<"This time you can only miss one !!"<<endl;
+    cout<<"Questios are now worth $5,000."<<endl;
     cout<<"Questions will also rise in difficulty"<<endl;
+    cout<<endl;
     //keep track of losses
     int sum2;
     for(int k=0;k<=2;k++){
@@ -417,7 +415,7 @@ int main(int argc, char** argv) {
         cin>>choice;
         if(choice==answ3[x]) {
             cout<<"Congratuilations .";
-            count=0;
+            count=5000;
         }
         else {
             
@@ -437,7 +435,7 @@ int main(int argc, char** argv) {
         
     }
     cout<<"YOu have made it to level four !!!"<<endl;
-    cout<<"You an only miss one !!";
+    cout<<"Questions answered corretly will be awarded $50,000";
     int sum3;
     //loop count
     int l=0;
@@ -457,7 +455,7 @@ int main(int argc, char** argv) {
         }
         else {
             cout<<"Sorry that is incorrect";
-            count=1;
+            count=50,000;
         }
         sum+=count;
         if(sum<2) continue;
@@ -466,11 +464,9 @@ int main(int argc, char** argv) {
         cout<<endl;
         
     }
-    else{
-        cout<<"You Have lost the game.Goodbye. Try Agian"<<endl;
-        
-    }
+   
     cout<<"YOu have made it to the final level. According to the internet, these questions are difficult."<<endl;
+    cout<<"questions are worth $250,000"<<endl;
     int sum4;
     //loop count
     int m=0;
@@ -486,11 +482,11 @@ int main(int argc, char** argv) {
         cin>>choice;
         if(choice==answ5[x]) {
             cout<<"Congratuilations .";
-            count=0;
+            count=250000;
         }
         else {
             cout<<"Sorry that is incorrect";
-            count=1;
+            count=0;
         }
         sum+=count;
     }
@@ -498,13 +494,10 @@ int main(int argc, char** argv) {
         cout<<endl;
         
     }
-    else{
-        cout<<"You Have lost the game.Goodbye. Try Agian"<<endl;
-        
-    }
-    cout<<"Congratulations, you have won the game."<<endl;
-    cout<<"You Have won a total of "<<sum<< " dollars "<<endl;
-    cout<<"You get to write your Initials on theleaderboard"<<endl;
+    //Game reahes end
+    cout<<"You Have Reached end of Game"<<endl;
+    cout<<"You Have won a total of $"<<sum<< " dollars "<<endl;
+    cout<<"You get to write your Initials on the leaderboard"<<endl;
 
     return 0;
     
