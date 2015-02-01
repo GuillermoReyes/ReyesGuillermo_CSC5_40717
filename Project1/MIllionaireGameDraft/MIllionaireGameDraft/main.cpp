@@ -214,29 +214,18 @@ int main(int argc, char** argv) {
         int count;
       count+=loss;
            if(count>=2){
-          cout<<"you have lost,Try again."<<endl;
-          return false;
-      }
-           else{ //nothing
-           }
-      
+               cout<<"You have lost"<<endl;
+               return 0;
+       }
   }
-    cout<<"you hae made it past the first round "<<endl;
-    cout<<"During this round you can only answer two incorrectly, but the question will be slight harder."<<endl;
-    while(i<=3){
-        i++;
-        //counts losses
-        int loss=leveltwo(0);
-        int count2;
-        count2+=loss;
-        if(count2>=2){
-            cout<<"you have lost,Try again."<<endl;
-            return true;
-        }
-        else{
-            continue;
-        }
+    cout<<"safe"<<endl;
+    cout<<"YOu have made it to the next round."<<endl;
+    do{
+        
     }
-    cout<<"You have made it to the third round.."<<endl;
-    return true;
-  }
+    return 0;
+}
+
+      
+  
+
