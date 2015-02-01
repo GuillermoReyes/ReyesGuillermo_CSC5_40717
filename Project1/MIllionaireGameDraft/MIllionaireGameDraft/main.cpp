@@ -16,7 +16,7 @@ void moneyCount(int a ){
     
 }
 //Level oone questions
-void levelone(int x){
+int levelone(int x){
     int choice;
     //Initialize array
 
@@ -52,7 +52,9 @@ void levelone(int x){
     cin>>choice;
     if(choice==oneansw[x]) cout<<"Congratuilations .";
     else cout<<"Sorry that is incorrect";
-    
+    if(choice==oneansw[x]) return 0;
+    else return 1;
+
 }
 
 
@@ -177,10 +179,10 @@ int levelFive(int x){
     cout<<levelfive[x]<<endl;
     cout<<fiveRes[x]<<endl;
     cin>>choice;
-    if(choice==answ[x]) cout<<"Congratuilations .";
+    if(choice==answ[x]) cout<<"Correct.";
     else cout<<"Sorry that is incorrect";
-    if(choice==answ[x]) return 1;
-    else return 2;
+    if(choice==answ[x]) return 0;
+    else return 1;
     
 
  
@@ -189,28 +191,72 @@ int levelFive(int x){
 
 int main(int argc, char** argv) {
     int points = 3;
+    int loss = 0;
    //Generate random number seed
     srand(static_cast<unsigned int>(time(0)));
     //Randomly chooses which question to display
-    //does each leel three times
+    //does each level three times
     int i = 0;
-    while(i<=3){
-       
-    int Q = rand()%10;
-    cout<<Q<<endl;
-    levelFive(Q);
-        if(levelFive(Q)==2){
-            int count=points-1;
-            
-            i++;
+    int count=0;
+    while(i<=2){
+        i++;
+    int Q1 = rand()%10;
+        cout<<Q1<<endl;
+        int choice;
+        //Initialize array
         
+        
+        //questions
+        
+        string leveloneQ[]={"What is the capital of California",
+            "Which president approved the FHA Reverse Mortgage?",
+            "Which Inventor discovered Alternating current ?",
+            "Macintosh and Linux are ____ based",
+            "Europe is a country.",
+            "Which Korean leader was featured in the recent film 'The Interview'",
+            "___ pioneered mass production vehicles and made billions. ",
+            "Who wrote the code for apple when it was a start-up",
+            "Canada is North of ",};
+        
+        //options
+        string oneResp[]={"1. Sacramento 2.Hawaii 3.Stanford 4.Topeka.",
+            "1.Barrack Obama 2.JFK 3.Reagan 4.FDR ",
+            "1.Thomas Edision 2.Tesla 3.Jeff 4.Fourier",
+            "1.MS-DOS 2.FAT32 3.UNIX 4.Code ",
+            "1.True 2.False",
+            "1.Kim Jong Un 2.Kim il Un 3.Kim Young Sam 4.Roh Tae-Woo",
+            "1.Warren Buffet 2.Henry Ford 3.Richard Branson 4.Al sharpton",
+            "1.Steve jobs 2.Tim Cook 3.Steve Wozniak 4.Bill Gates",
+            "1.United states 2.Russia 3. Japan 4. Australia",};
+        
+        //Answers
+        int oneansw[] = {1,3,2,3,2,1,2,3,1,4};
+        
+        cout<<leveloneQ[Q1]<<endl;
+        cout<<oneResp[Q1]<<endl;
+        cin>>choice;
+        if(choice==oneansw[Q1]) cout<<"Congratuilations .";
+        else cout<<"Sorry that is incorrect";
+        if(!(choice==oneansw[Q1])) {
+            
+            loss = 1;
+            
         }
+        count+=loss;
+        
+        
        
     
+      
         
-            return 0;
-        }
+        
+    }
+    
+    cout<<"You have "<<count<<" counts"<<endl;
+    
+   
 
-
+    return 0;
 
 }
+
