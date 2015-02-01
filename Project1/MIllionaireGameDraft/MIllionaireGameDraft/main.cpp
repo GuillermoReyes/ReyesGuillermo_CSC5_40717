@@ -1,6 +1,6 @@
 //
 //  main.cpp
-//  MIllionaireGameDraft
+// Trivia Game Projet
 //
 //  Created by Guillermo  on 1/30/15.
 //  Copyright (c) 2015 Guillermo . All rights reserved.
@@ -11,16 +11,24 @@
 #include <ctime>
 
 using namespace std;
-//Counts the  money gained from playing who wants to be a millionaire
-void moneyCount(int a ){
-    
+
+//funtion that generates a number
+int numberGenerator(int s) {
+    //Dummy Variable
+    s=2;
+    //Random Number seed
+    srand(static_cast<unsigned int>(time(0)));
+    int a=rand()%10;
+    return a;
 }
 //Level oone questions
-int levelone(int x){
-    int choice;
-    //Initialize array
-
+int levelone(int s){
+   //Dummy variable
     
+    int choice;
+    //Initialize random seed
+    srand(static_cast<unsigned int>(time(0)));
+     int x=rand()%10;
     //questions
     
     string leveloneQ[]={"What is the capital of California",
@@ -60,7 +68,7 @@ int levelone(int x){
 
 
 //level two questions
-void leveltwo(int x){
+int leveltwo(int x){
     //variable for user to respond
     int choice;
     string leveltwo[]= {"who took the road less traveled by ?",
@@ -88,6 +96,8 @@ void leveltwo(int x){
     cin>>choice;
     if(choice==twoansw[x]) cout<<"Congratuilations .";
     else cout<<"Sorry that is incorrect";
+    if(choice==twoansw[x]) return 0;
+    else return 1;
         }
     
 //Level three questions
@@ -190,73 +200,43 @@ int levelFive(int x){
     
 
 int main(int argc, char** argv) {
-    int points = 3;
-    int loss = 0;
-   //Generate random number seed
-    srand(static_cast<unsigned int>(time(0)));
-    //Randomly chooses which question to display
-    //does each level three times
-    int i = 0;
-    int count=0;
-    while(i<=2){
+    //Initialize lives
+    int lives = 3;
+    //Begin first round of Trivia Game
+    cout<<"For the first round, you may only answer two incorretly."<<endl;
+    
+    //Iitializer counter
+    int i=0;
+  while(i<=3){
         i++;
-    int Q1 = rand()%10;
-        cout<<Q1<<endl;
-        int choice;
-        //Initialize array
-        
-        
-        //questions
-        
-        string leveloneQ[]={"What is the capital of California",
-            "Which president approved the FHA Reverse Mortgage?",
-            "Which Inventor discovered Alternating current ?",
-            "Macintosh and Linux are ____ based",
-            "Europe is a country.",
-            "Which Korean leader was featured in the recent film 'The Interview'",
-            "___ pioneered mass production vehicles and made billions. ",
-            "Who wrote the code for apple when it was a start-up",
-            "Canada is North of ",};
-        
-        //options
-        string oneResp[]={"1. Sacramento 2.Hawaii 3.Stanford 4.Topeka.",
-            "1.Barrack Obama 2.JFK 3.Reagan 4.FDR ",
-            "1.Thomas Edision 2.Tesla 3.Jeff 4.Fourier",
-            "1.MS-DOS 2.FAT32 3.UNIX 4.Code ",
-            "1.True 2.False",
-            "1.Kim Jong Un 2.Kim il Un 3.Kim Young Sam 4.Roh Tae-Woo",
-            "1.Warren Buffet 2.Henry Ford 3.Richard Branson 4.Al sharpton",
-            "1.Steve jobs 2.Tim Cook 3.Steve Wozniak 4.Bill Gates",
-            "1.United states 2.Russia 3. Japan 4. Australia",};
-        
-        //Answers
-        int oneansw[] = {1,3,2,3,2,1,2,3,1,4};
-        
-        cout<<leveloneQ[Q1]<<endl;
-        cout<<oneResp[Q1]<<endl;
-        cin>>choice;
-        if(choice==oneansw[Q1]) cout<<"Congratuilations .";
-        else cout<<"Sorry that is incorrect";
-        if(!(choice==oneansw[Q1])) {
-            
-            loss = 1;
-            
-        }
-        count+=loss;
-        
-        
-       
-    
+        //counts losses
+        int loss=levelone(0);
+        int count;
+      count+=loss;
+           if(count>=2){
+          cout<<"you have lost,Try again."<<endl;
+          return false;
+      }
+           else{ //nothing
+           }
       
-        
-        
+  }
+    cout<<"you hae made it past the first round "<<endl;
+    cout<<"During this round you can only answer two incorrectly, but the question will be slight harder."<<endl;
+    while(i<=3){
+        i++;
+        //counts losses
+        int loss=leveltwo(0);
+        int count2;
+        count2+=loss;
+        if(count2>=2){
+            cout<<"you have lost,Try again."<<endl;
+            return true;
+        }
+        else{
+            continue;
+        }
     }
-    
-    cout<<"You have "<<count<<" counts"<<endl;
-    
-   
-
-    return 0;
-
-}
-
+    cout<<"You have made it to the third round.."<<endl;
+    return true;
+  }
