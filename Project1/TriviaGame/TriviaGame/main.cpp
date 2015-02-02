@@ -1,20 +1,20 @@
 //
 //  main.cpp
-// Trivia Game Projet
+//  TriviaGame
 //
-//  Created by Guillermo  on 1/30/15.
+//  Created by Guillermo  on 2/1/15.
 //  Copyright (c) 2015 Guillermo . All rights reserved.
 //
 
-#include <cstdlib>
 #include <iostream>
-#include <ctime>
 #include <string>
+#include <ctime>
+#include <cstdlib>
+#include <fstream>
 
 using namespace std;
 
-
-int main(int argc, char** argv) {
+int main(int argc, const char * argv[]) {
     //Begin game
     //Add databases
     //LEvel one questions
@@ -128,162 +128,117 @@ int main(int argc, char** argv) {
         "1.Science of shopping 2.Science of prehistoric fish 3.Scinece of Kissing 4.Statistial coincidences"};
     //Level 5 answers
     int answ5[]     =  {1,2,3,1,4,1,2,3,3};
- //Set rand generator seed
+    //Set rand generator seed
     srand(static_cast<unsigned int>(time(0)));
-    //sum of fails
+    cout<<"Welcom to the trivia Game"<<endl;
+    cout<<"You earn money by answering the quistions correctly"<<endl;
+    //Declare variable that will occur constantly
     int sum=0;
-    //Introdue game.
-    cout<<"For the first round, Questions answered corretly are awarded $500."<<endl;
-    //loop count
-    int i=0;
-    while(i<=2){
-        //user chooses the orret answer
-        int choice;
-        i++;
-        int count;
-        //Random number
-        int x=rand()%10;
-        cout<<leveloneQ[x]<<endl;
-        cout<<oneResp[x]<<endl;
-        cin>>choice;
-        if(choice==oneansw[x]) {
-            cout<<"Correct .";
-            count=500;
-        }
-        else {
-            cout<<"incorrect";
-            count=0;
-        }
-        sum+=count;
-      
-    
-            }
-    
+    int counter=0;
+    int count=0;
+    cout<<"In the first level, Questions are worth $1000 "<<endl;
     cout<<endl;
-    cout<<"You Have made it to level two, questions answered corretly are worth $1000."<<endl;
-    //loop count
-    int j=0;
-    //keep track of losses
-    int sum1;
-    do{
-        //user chooses the orret answer
-        int choice;
-        i++;
-        int count;
-        //Random number
-        int x=rand()%10;
-        cout<<leveltwo[x]<<endl;
-        cout<<twoResp[x]<<endl;
-        cin>>choice;
-        if(choice==twoansw[x]) {
-            cout<<"Congratuilations .";
+    do {
+        int choose;
+        int a=rand()%10;
+        cout<<leveloneQ[a]<<endl;
+        cout<<oneResp[a]<<endl;
+        cin>>choose;
+        if(choose==oneansw[a]){
+            cout<<"correct."<<endl;
             count=1000;
         }
-        else {
-            cout<<"Sorry that is incorrect";
-            count=0;
-        }
-        sum+=count;
-    }while(i<=2);
-    
-    cout<<"You  have made it to level three!!"<<endl;
-    cout<<"Questios are now worth $5,000."<<endl;
-    cout<<"Questions will also rise in difficulty"<<endl;
-    cout<<endl;
-    //keep track of losses
-    int sum2;
-    for(i=0;i<=2;i++){
-        //fails
-        int count;
-        //keep track of fails
-        int choice;
-        //random number
-        int x=rand()%10;
-        //begin trivia
-        cout<<levelthree[x]<<endl;
-        cout<<threeResp[x]<<endl;
-        cin>>choice;
-        if(choice==answ3[x]) {
-            cout<<"Congratuilations .";
-            count=5000;
-        }
-        else {
+        if(!(choose==oneansw[a])){
+            cout<<"Incorret."<<endl;
+            count =0;
             
-        cout<<"Sorry that is incorrect";
-            count=1;
         }
-
         sum+=count;
-    }
-    
-        cout<<"YOu have made it to level four !!!"<<endl;
-    cout<<"Questions answered corretly will be awarded $50,000";
-    int sum3;
-    //loop count
-    int l=0;
-    while(i<=1){
-        //user chooses the orret answer
-        int choice;
-        i++;
-        int count;
-        //Random number
-        int x=rand()%10;
-        cout<<levelFour[x]<<endl;
-        cout<<fourRes[x]<<endl;
-        cin>>choice;
-        if(choice==answ4[x]) {
-            cout<<"Congratuilations .";
+        counter++;
+    }while(counter<=2);
+    cout<<"You are now on level two questions"<<endl;
+    for(counter=0;counter<=2;counter++){
+        int choose1;
+        int b=rand()%10;
+        cout<<leveltwo[b]<<endl;
+        cout<<twoResp[b]<<endl;
+        cin>>choose1;
+        if(choose1==twoansw[b]){
+            cout<<"correct!!"<<endl;
+            count=25000;
+        }//ends if
+        if(!(choose1==twoansw[b])){
+            cout<<"Incorrect."<<endl;
+            count=0;
+        }//ends if statement
+        sum+=count;
+    }//ends for loop
+    cout<<"You are now on level 3"<<endl;
+    cout<<"The questions are now worth $50,000."<<endl;
+    while(counter<=3){
+        int choose2;
+        int c=rand()%10;
+        cout<<levelthree[c]<<endl;
+        cout<<threeResp[c]<<endl;
+        cin>>choose2;
+        if(choose2==answ3[c]){
+            cout<<"Correct!"<<endl;
+            count=50000;
+        }//End if statement
+        if(!(choose2==answ3[c])){
+            cout<<"Incorrect!!"<<endl;
+            count=0;
+        }//ends if statement
+        counter++;
+        sum+=count;
+    }//Ends while loop
+    cout<<"You are now on level 4 questions"<<endl;
+    cout<<"These questions are worth $100,000"<<endl;
+    for(counter=0;counter<=2;counter++){
+     
+        int choose3;
+        int d=rand()%10;
+        cout<<levelFour[d]<<endl;
+        cout<<fourRes[d]<<endl;
+        cin>>choose3;
+        if(choose3==answ4[d]){
+            cout<<"Correct"<<endl;
+            count=100000;
+        }//end if statement
+        if(!(choose3==answ4[d])){
+            cout<<"Incorrect"<<endl;
             count=0;
         }
-        else {
-            cout<<"Sorry that is incorrect";
-            count=50,000;
-        }
-        sum+=count;
-        if(sum<2) continue;
-    }
-    if(sum<=2){
-        cout<<endl;
         
-    }
-   
-    cout<<"You have made it to the final level. According to the internet, these questions are difficult."<<endl;
-    cout<<"questions are worth $250,000"<<endl;
-    int sum4;
-    //loop count
-    int m=0;
-    do{
-        //user chooses the corret answer
-        int choice;
-       
-        int count;
-        //Random number
-        int x=rand()%10;
-        cout<<levelfive[x]<<endl;
-        cout<<fiveRes[x]<<endl;
-        cin>>choice;
-        if(choice==answ5[x]) {
-            cout<<"Congratuilations .";
-            count=250000;
-        }
-        else {
-            cout<<"Sorry that is incorrect";
-            count=0;
-        }
         sum+=count;
-        i++;
-    }while(i<=3);
-           //Game reahes end
-    cout<<"You Have Reached end of Game"<<endl;
-    cout<<"You Have won a total of $"<<sum<< " dollars "<<endl;
-    cout<<"You get to write your Initials on the leaderboard"<<endl;
-
+    }
+    cout<<"You are now on Level Five questions."<<endl;
+    cout<<"These questions are now worth $250,000"<<endl;
+    for(counter=0;counter<=2;counter++){
+        int choose4;
+        int e =rand()%10;
+        cout<<levelfive[e]<<endl;
+        cout<<fiveRes[e]<<endl;
+        cin>>choose4;
+        if(choose4==answ5[e]){
+            cout<<"Correct"<<endl;
+            count=250000;
+        }//end if statement
+        if(!(choose4==answ5[e])){
+            cout<<"Incorrect."<<endl;
+            count=0;
+        }//end if statement
+        sum+=count;
+    }//end for loop
+    cout<<"You have earned a total of $ "<<sum<<endl;
+    char win;
+    cout<<"Enter your initials so score can be written onto leaderboard."<<endl;
+    cin>>win;
+    ofstream output;
+    output.open("Leaderboard");
+    output<<win<<"  "<<"$"<<sum<<endl;
+    output.close();
+    
+    
     return 0;
-    
-    
-    
 }
-
-
-
-
