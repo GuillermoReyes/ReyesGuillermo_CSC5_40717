@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
+#include <string>
 
 using namespace std;
 //function that stops the game
