@@ -95,6 +95,7 @@ void levelTwo(int &sum){
     for(int counter=0;counter<=2;counter++){
         int choose1;
         int count = 0;
+        count+=sum;
         int b=rand()%8;
         cout<<leveltwo[b]<<endl;
         cout<<twoResp[b]<<endl;
@@ -136,6 +137,7 @@ void levelThree(int &sum){
     cout<<"The questions are now worth $50,000."<<endl;
     int counter;
     int count=0;
+    count+=sum;
     while(counter<=3){
         int choose2;
         int c=rand()%8;
@@ -151,7 +153,7 @@ void levelThree(int &sum){
             count=0;
         }//ends if statement
         counter++;
-        sum+=count;
+        sum+=sum;
     }//Ends while loop
 
 }
@@ -183,6 +185,7 @@ void levelFour(int &sum){
     cout<<"You are now on level 4 questions"<<endl;
     cout<<"These questions are worth $100,000"<<endl;
     int count=0;
+    count+=sum;
     for(int counter=0;counter<=2;counter++){
         
         int choose3;
@@ -230,6 +233,8 @@ void levelFive(int &sum){
     cout<<"You are now on Level Five questions."<<endl;
     cout<<"These questions are now worth $250,000"<<endl;
     int count=0;
+    //Dynamicallu changing sum of money
+    count+=sum;
     for(int counter=0;counter<=2;counter++){
         int choose4;
         int e =rand()%8;
