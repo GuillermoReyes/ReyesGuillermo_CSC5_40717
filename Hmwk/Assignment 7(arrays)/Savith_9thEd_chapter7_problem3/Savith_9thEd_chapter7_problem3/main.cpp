@@ -22,11 +22,11 @@ void swapFrontBack(int size){
         
     }//end for loop
     //will now swap the front and the bacl
-    int s,b;
-    s=a[0];
-    b=a[size];
-    a[0]=b;
-    a[size]=s;
+    int p1,p2;
+    p1=a[0];
+    p2=a[size];
+    a[0]=p2;
+    a[size]=p1;
     //loop that will print the array
     for(int i=0;i<=size;i++){
         cout<<a[i]<<" ";
