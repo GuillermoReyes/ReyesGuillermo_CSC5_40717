@@ -4,7 +4,7 @@
 //
 //  Created by Guillermo  on 2/6/15.
 //  Copyright (c) 2015 Guillermo . All rights reserved.
-//
+//  trivia based game
 
 #include <iostream>
 #include <string>
@@ -13,7 +13,7 @@
 #include <fstream>
 
 using namespace std;
-void levelOne(){
+void levelOne(int &sum){
     
     string leveloneQ[]={"What is the capital of California",
         "Which president approved the FHA Reverse Mortgage?",
@@ -38,8 +38,9 @@ void levelOne(){
     
     //Answers
     int oneansw[] = {1,3,2,3,2,1,2,3,1};
+    
 }
-void levelTwo(){
+void levelTwo(int &sum){
     string leveltwo[]= {"who took the road less traveled by ?",
         "Who discovered Radium, consequently receiving radiation ?",
         "Galileo invented the telescope",
@@ -63,7 +64,7 @@ void levelTwo(){
     int (twoansw[])= {4,1,2,1,4,2,4,2,3};
 
 }
-void levelThree(){
+void levelThree(int &sum){
     string levelthree[]={"Pointillism was pioneered by which impressionist artist",
         "what is the average student loan debt ?",
         "What phrase does Wi-Fi represent ?",
@@ -85,7 +86,7 @@ void levelThree(){
     int answ3[]        =  {1,2,3,2,4,1,2,3};
 
 }
-void levelFour(){
+void levelFour(int &sum){
     //LEvel four questions
     string levelFour[]= {"What does Alt-J's (band) name stands for ",
         "Gibbs free energy is most losely related to ",
@@ -112,7 +113,7 @@ void levelFour(){
     int answ4[] =    {1,2,3,1,4,1,2,4,4,1};
 
 }
-void levelFive(){
+void levelFive(int &suum){
     //Level 5 questions
     string levelfive[] = {"Which head of state recently claimed “white, blue-eyed bankers have brought the world economy to its knees”? ",
         "Daylight savings was developed to ",
