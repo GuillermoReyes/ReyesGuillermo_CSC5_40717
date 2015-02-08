@@ -29,7 +29,7 @@ void stDev(int size){
         sum+=a[i];
     }
    float avg=sum/size;
-    cout<<avg<<endl;
+    cout<<"The average is "<<avg<<endl;
     float plus=0;
     //loop that will calulate deviation individually and fill it in a new array
     for(int i=0;i<size;i++){
@@ -40,7 +40,7 @@ void stDev(int size){
         plus+=dev;
         
     }//closes for loope
-    cout<<plus<<endl;
+ 
     float temp=plus/size;
     cout<<" The standard deviation is "<<sqrt(temp)<<endl;
     
