@@ -30,8 +30,8 @@ int firstLast2(int size){    //int a is the actual array and num is thw size of 
         a[i]=input;
         i++;
     }
-    if(a[0]==2||a[size-2]==2) return 12;
-    else return 10;
+    if(a[0]==2||a[size-2]==2) return true;
+    else return false;
 }
 //begin execution here
 int main(){
