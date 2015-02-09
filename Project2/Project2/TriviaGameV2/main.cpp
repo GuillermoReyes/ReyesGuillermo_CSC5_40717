@@ -314,7 +314,10 @@ int main() {
                         while(! myfile.eof()) {
                                 getline(myfile, data);
                                  std::cout << data << "\n\n";
+                                 cout<<data[1]<<endl;
+                                 
     }
+                
     
     std::cin.get();
     break;
