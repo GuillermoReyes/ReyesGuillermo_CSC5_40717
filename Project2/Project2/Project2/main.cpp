@@ -13,7 +13,7 @@
 #include <fstream>
 
 using namespace std;
-void levelOne(int &sum){
+void levelOne(int sum){
     
     string leveloneQ[]={"What is the capital of California",
         "Which president approved the FHA Reverse Mortgage?",
@@ -68,7 +68,7 @@ void levelOne(int &sum){
     }while(counter<=2);
     
 }
-void levelTwo(int &sum){
+void levelTwo(int sum){
     string leveltwo[]= {"who took the road less traveled by ?",
         "Who discovered Radium, consequently receiving radiation ?",
         "Galileo invented the telescope",
@@ -113,7 +113,7 @@ void levelTwo(int &sum){
 
 
 }
-void levelThree(int &sum){
+void levelThree(int sum){
     string levelthree[]={"Pointillism was pioneered by which impressionist artist",
         "what is the average student loan debt ?",
         "What phrase does Wi-Fi represent ?",
@@ -157,7 +157,7 @@ void levelThree(int &sum){
     }//Ends while loop
 
 }
-void levelFour(int &sum){
+void levelFour(int sum){
     //LEvel four questions
     string levelFour[]= {"What does Alt-J's (band) name stands for ",
         "Gibbs free energy is most losely related to ",
@@ -207,7 +207,7 @@ void levelFour(int &sum){
 
 
 }
-void levelFive(int &sum){
+void levelFive(int sum){
     //Level 5 questions
     string levelfive[] = {"Which head of state recently claimed “white, blue-eyed bankers have brought the world economy to its knees”? ",
         "Daylight savings was developed to ",

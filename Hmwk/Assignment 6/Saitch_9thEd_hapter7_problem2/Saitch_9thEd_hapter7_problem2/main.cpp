@@ -20,7 +20,7 @@ void countNum2s(int Size){
         cout<<"enter value for spot # "<<i+1<<endl;
         cin>>input;
         a[i]=input;
-    }//ends for loop and all that shit
+    }//ends for loop
     //part that searcheas for the twos
     for(int i=0;i<=Size;i++){
         if (a[i]==2) count=1;
