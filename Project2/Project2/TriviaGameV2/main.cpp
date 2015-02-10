@@ -10,8 +10,12 @@
 #include <ctime>
 #include <cstdlib>
 #include <fstream>
+#include <vector>
+#include <sstream>
 
 using namespace std;
+
+
 //initializing a variable that is passed on
 void levelOne(int sum){
     
@@ -40,7 +44,7 @@ void levelOne(int sum){
     int oneansw[] = {1,3,2,3,2,1,2,3,1};
     srand(static_cast<unsigned int>(time(0)));
     cout<<"Welcome to the trivia Game"<<endl;
-    cout<<"You earn money by answering the quistions correctly"<<endl;
+    cout<<"You earn money by answering the questions correctly"<<endl;
     //Declare variable that will occur constantly
     
     int counter=0;
@@ -288,7 +292,10 @@ int main() {
             cin>>win;
             ofstream output;
             output.open("Leaderboard.txt");
-            output<<win<<"  "<<"$"<<sum<<endl;
+            output<<win<<"  "<<"$"<<endl;
+            output.close();
+            output.open("Scores.txt");
+            output<<sum<<endl;
             output.close();
             break;
         }//end case a
@@ -308,22 +315,41 @@ int main() {
             break;
         }
         case 'd':{
-             std::ifstream myfile("leaderboard.txt");
-                std::string data;
-    
-                        while(! myfile.eof()) {
-                                getline(myfile, data);
-                                 std::cout << data << "\n\n";
-                                 cout<<data[1]<<endl;
-                                 
-    }
+              ifstream file("Leaderboard.txt");
+              ifstream score("Scores.txt");
+         if(file.is_open())
+         {
+                string myArray[30];
+                         
+                         for(int i = 0; i <10;++i){
+                         
+                 file >> myArray[i];
                 
-    
-    std::cin.get();
-    break;
+                         }
+                string myArray2[30];
+                for(int i=0;i<10;i++){
+                    score>>myArray2[i];
+                }//closes for loop 
+                cout<<myArray[0]<<" "<<myArray2[0]<<endl;
+                
+                
+                      }
+       break;
+        }//closes case
+        case 'e': {
+            ifstream file("Leaderboard.txt");
+            vector<char> s;
+            
+            
+          
+         
+            cout<<" nothing here"<<endl;
+            
+        break;    
         }//closes case
         default:{
             cout<<"Please choose a correct statement"<<endl;
+            
         }//end default
     }//end switch statement
     return 0;
