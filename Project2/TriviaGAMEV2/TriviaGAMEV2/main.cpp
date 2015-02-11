@@ -44,7 +44,7 @@ void bubSort2(int a[],int num){
         swap2=false;
         //dynamially swap
         for(int i=0;i<num-1;i++){
-            if(a[i]>a[i+1]){
+            if(a[i]<a[i+1]){
                 swap(a[i],a[i+1]);
                 swap2=true;
             }//close if statement
@@ -343,7 +343,7 @@ int main() {
             cin>>win;
             ofstream output;
             output.open("Leaderboard.txt");
-            output<<win<<"  "<<"$"<<sum<<endl;
+            output<<win;
             output.close();
             output.open("Scores.txt");
             output<<sum<<endl;
@@ -378,6 +378,7 @@ int main() {
             //sorting routine goes here
             bubSort2(myArray2,SIZE);
             dispAray(myArray2,SIZE);
+            score.close();
             
             
             
@@ -395,10 +396,10 @@ int main() {
             for(int i=0;i<SIZE;i++){
                 file>>search[i];
                 if(target==search[i]){
-                    cout<<search[1]<<endl;
+                    cout<<search[i]<<endl;
                 }//closes if statement
                 else {
-                    cout<<"not found"<<endl;
+                    continue;
                 }
             }//close for loop
             break;
