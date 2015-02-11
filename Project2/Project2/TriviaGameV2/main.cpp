@@ -14,7 +14,41 @@
 #include <sstream>
 
 using namespace std;
+//function to sort
 
+void swap(int&v1, int&v2){
+    int temp;
+    temp=v1;
+    v1=v2;
+    v2=temp;
+}
+int indexSmall(const int a[],int startI,int num){
+    int min=a[startI];
+    int index_of_min=startI;
+    for(int index=startI+1;index<num;index++){
+        if(a[index]<min){
+            min =a[index];
+            index_of_min=index;
+            // min is the smallest
+        }//close if statement 
+        return index_of_min;
+    }//closes for loop 
+    
+}//closes indexSmall function 
+//function that displays array 
+void dispAray(int  a[],int num){
+    //loop that will display array 
+    for(int i=0;i<num;i++){
+        cout<<a[i]<<" ";
+    }//closes for loop 
+}//closes fuunction 
+void sort(int a[],int size){
+    int next_smallest;
+    for(int i=0;i<size-1;i++){
+         next_smallest=indexSmall(a,i,size);
+        swap(a[i],a[next_smallest]);
+    }//closes for loop
+}//
 
 //initializing a variable that is passed on
 void levelOne(int sum){
@@ -292,7 +326,7 @@ int main() {
             cin>>win;
             ofstream output;
             output.open("Leaderboard.txt");
-            output<<win<<"  "<<"$"<<endl;
+            output<<win<<"  "<<"$"<<sum<<endl;
             output.close();
             output.open("Scores.txt");
             output<<sum<<endl;
@@ -315,37 +349,42 @@ int main() {
             break;
         }
         case 'd':{
-              ifstream file("Leaderboard.txt");
+             
               ifstream score("Scores.txt");
-         if(file.is_open())
-         {
-                string myArray[30];
-                         
-                         for(int i = 0; i <10;++i){
-                         
-                 file >> myArray[i];
-                
-                         }
-                string myArray2[30];
-                for(int i=0;i<10;i++){
+         
+         
+              const int SIZE=10;
+                int myArray2[SIZE];
+                for(int i=0;i<SIZE;i++){
                     score>>myArray2[i];
                 }//closes for loop 
-                cout<<myArray[0]<<" "<<myArray2[0]<<endl;
+                //sorting routine goes here
+                sort(myArray2,SIZE);
+                dispAray(myArray2,SIZE);
                 
                 
-                      }
-       break;
+                
+                break;
         }//closes case
+        //searches for players 
         case 'e': {
+         //declare variable for searching 
+            char target;
+            cout<<"Enter a search term (initials)"<<endl;
+            cin>>target;
             ifstream file("Leaderboard.txt");
-            vector<char> s;
-            
-            
-          
-         
-            cout<<" nothing here"<<endl;
-            
-        break;    
+            const int SIZE =10;
+            char search[SIZE];
+            for(int i=0;i<SIZE;i++){
+                file>>search[i];
+                if(target==search[i]){
+                    cout<<search[1]<<endl;
+                }//closes if statement 
+                else {
+                    cout<<"not found"<<endl;
+                }
+            }//close for loop 
+            break;    
         }//closes case
         default:{
             cout<<"Please choose a correct statement"<<endl;
