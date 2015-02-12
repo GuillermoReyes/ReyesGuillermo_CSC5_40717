@@ -1,8 +1,8 @@
 //
 //  main.cpp
 //  TriviaGAMEV2
-//
-//  Created by Guillermo  on 2/11/15.
+//  C++ Intro to program logic project 2
+//  Created by Guillermo
 //  Copyright (c) 2015 Guillermo . All rights reserved.
 //
 
@@ -12,11 +12,150 @@
 #include <cstdlib>
 #include <fstream>
 
-#include <sstream>
+
 
 using namespace std;
 //function to sort
 
+void bubSort(int a[],int num);
+//seond sorting funtion
+void bubSort2(int a[],int num);
+//sawap function for sort
+void swap(int &a,int &b);
+//function to display array
+void dispAray(const int a[],int num);
+//initializing a variable that is passed on
+void levelOne(int sum);
+void levelTwo(int &sum);
+//funtion for level three questions
+void levelThree(int &sum);
+//funtion for level four
+void levelFour(int &sum);
+void levelFive(int &sum);
+int main(){
+    //Begin game
+    //Add databases
+    //LEvel one questions
+    char pick;
+    cout<<"Welcome to the Game. "<<endl;
+    cout<<"a.Play the game\n";
+    cout<<"b.view sources"<<endl;
+    cout<<"c.view rules of the game"<<endl;
+    cout<<"d.view leaderboard"<<endl;
+    cout<<"e.search for player ans score"<<endl;
+    cin>>pick;
+    switch(pick){
+            
+            
+         //case that executest the game
+        case 'a': {
+            int sum=0;
+            cout<<"Welcome to my Trivia Game!"<<endl;
+            levelOne(sum);
+            levelTwo(sum);
+            levelThree(sum);
+            levelFour(sum);
+            levelFive(sum);
+            
+            //displays how much they hae won
+            cout<<"You have earned a total of $ "<<sum<<endl;
+            //variable that asks for their initials
+            char win;
+            //prompt for input
+            cout<<"Enter your initials so score can be written onto leaderboard."<<endl;
+            cin>>win;
+            //open two files
+            ofstream output;
+            output.open("Leaderboard.txt");
+            output<<win;
+            output.close();
+            output.open("Scores.txt");
+            output<<sum<<endl;
+            //close a file
+            output.close();
+            break;
+        }//end case a
+        //display the sources
+        case 'b':{
+            cout<<"Sources were taken from various wikipedia elements ";
+            cout<<" and common knowledge"<<endl;
+            cout<<" wikipedia.com"<<endl;
+            break;
+        }//end case b
+        //display rules of the game
+        
+        case 'c':{
+            cout<<"Rules of the Game:"<<endl;
+            cout<<"By default, you will be cycled through the entire game"<<endl;
+            cout<<"The purpose is to obtain the highest score possible "<<endl;
+            cout<<"For every correct answer you will win a certain amount if money"<<endl;
+            cout<<"An incorrect answer will not result in a penalty."<<endl;
+            cout<<"choose the corresponding number to select your answer."<<endl;
+            break;
+        }
+        //show leaderboards
+        case 'd':{
+            // fill array with sores
+            ifstream score("Scores.txt");
+            
+            // declare size of array
+            const int SIZE=10;
+            //declare array for
+            int myArray2[SIZE];
+            //fill array with loop
+            for(int i=0;i<SIZE;i++){
+                score>>myArray2[i];
+            }//closes for loop
+            //sorting routine goes here
+            //sort the array
+            bubSort2(myArray2,SIZE);
+            //display the asorted array
+            dispAray(myArray2,SIZE);
+            score.close();
+            
+            
+            
+            break;
+        }//closes case
+            //searches for players
+        case 'e': {
+            //declare variable for searching
+            char target;
+            cout<<"Enter a search term (initials)"<<endl;
+            cin>>target;
+            //stream leaderboard and score file
+            ifstream file("Leaderboard.txt");
+            ifstream scores("Scores.txt");
+            //declare size of array
+            const int SIZE =10;
+            //declare array used for searching
+            char search[SIZE];
+            //fill array with scores
+            int score[SIZE];
+            //loop to search array
+            for(int i=0;i<SIZE;i++){
+                file>>search[i];
+                scores>>score[i];
+                if(target==search[i]){
+                    //assemble the arrays to output the person and sore searhed
+                    cout<<search[i]<<" "<<score[i]<<endl;
+                }//closes if statement
+                else {
+                    //continue if person not found
+                    continue;
+                }
+            }//close for loop
+            break;
+        }//closes case
+        //default case
+        default:{
+            cout<<"Please choose a correct statement"<<endl;
+            
+        }//end default
+    }//end switch statement
+    return 0;
+}
+//funtion for bubble sort
 void bubSort(int a[],int num){
     //swap it
     bool swap1;
@@ -35,7 +174,7 @@ void bubSort(int a[],int num){
     }while(swap1); //closes do whie loop
     
 }//closes bubble sort function
-
+//bubble sort funtion
 void bubSort2(int a[],int num){
     //declare boolean
     bool swap2;
@@ -52,22 +191,22 @@ void bubSort2(int a[],int num){
         
     }while(swap2);
 }//closes funtion
-
+//swaps to variables in array
 void swap(int &a,int &b){
     //logical exclusive pairs
     a=a^b;
     b=a^b;
     a=a^b;
 }//closes funtion
-//function to display array
+//function that displays an array
 void dispAray(const int a[],int num){
     //loop that display sorted function
     for(int i=0;i<num;i++){
         cout<<a[i]<<endl;
     }//closes for loop
-   
+    
 }
-//initializing a variable that is passed on
+//function for level one
 void levelOne(int sum){
     
     string leveloneQ[]={"What is the capital of California",
@@ -123,6 +262,7 @@ void levelOne(int sum){
     }while(counter<=2);
     
 }
+//Function for level two
 void levelTwo(int &sum){
     
     string leveltwo[]= {"who took the road less traveled by ?",
@@ -169,7 +309,7 @@ void levelTwo(int &sum){
     
     
 }
-//funtion for level three questions
+//funtion for level three
 void levelThree(int &sum){
     string levelthree[]={"Pointillism was pioneered by which impressionist artist",
         "what is the average student loan debt ?",
@@ -181,7 +321,7 @@ void levelThree(int &sum){
         "Finish the phrase. ONe with the courage to _, is the master of the world. "};
     //level three options
     string threeResp[]={ "1.George Seurat 2.Van Gogh 3.Piasso 4.Charled de Moine",
-    
+        
         "1.$0 2.$29,400 3.$50,000 4.$66,300 ",
         "1.Wireless Finder 2.wireless fidelity 3.nothing at all 4.Wireless information",
         "1.True 2.False",
@@ -215,6 +355,7 @@ void levelThree(int &sum){
     }//Ends while loop
     
 }
+//function for level four
 void levelFour(int &sum){
     //LEvel four questions
     string levelFour[]= {"What does Alt-J's (band) name stands for ",
@@ -265,6 +406,7 @@ void levelFour(int &sum){
     
     
 }
+//funciton for level five
 void levelFive(int &sum){
     //Level 5 questions
     string levelfive[] = {"Which head of state recently claimed “white, blue-eyed bankers have brought the world economy to its knees”? ",
@@ -313,106 +455,10 @@ void levelFive(int &sum){
     
 }
 
-int main() {
-    //Begin game
-    //Add databases
-    //LEvel one questions
-    char pick;
-    cout<<"Welcome to the Game. "<<endl;
-    cout<<"a.Play the game\n";
-    cout<<"b.view sources"<<endl;
-    cout<<"c.view rules of the game"<<endl;
-    cout<<"d.view leaderboard"<<endl;
-    cout<<"e.search for player ans score"<<endl;
-    cin>>pick;
-    switch(pick){
-            
-            
-            
-        case 'a': {
-            int sum=0;
-            cout<<"Welcome to my Trivia Game!"<<endl;
-            levelOne(sum);
-            levelTwo(sum);
-            levelThree(sum);
-            levelFour(sum);
-            levelFive(sum);
-            
-            
-            cout<<"You have earned a total of $ "<<sum<<endl;
-            char win;
-            cout<<"Enter your initials so score can be written onto leaderboard."<<endl;
-            cin>>win;
-            ofstream output;
-            output.open("Leaderboard.txt");
-            output<<win;
-            output.close();
-            output.open("Scores.txt");
-            output<<sum<<endl;
-            output.close();
-            break;
-        }//end case a
-        case 'b':{
-            cout<<"Sources were taken from various wikipedia element ";
-            cout<<" and common knowledge"<<endl;
-            cout<<" wikipedia.com"<<endl;
-            break;
-        }//end case b
-        case 'c':{
-            cout<<"Rules of the Game:"<<endl;
-            cout<<"By default, you will be cycled through the entire game"<<endl;
-            cout<<"The purpose is to obtain the highest score possible "<<endl;
-            cout<<"For every correct answer you will win a certain amount if money"<<endl;
-            cout<<"An incorrect answer will not result in a penalty."<<endl;
-            cout<<"choose the corresponding number to select your answer."<<endl;
-            break;
-        }
-        case 'd':{
-            
-            ifstream score("Scores.txt");
-            
-            
-            const int SIZE=10;
-            int myArray2[SIZE];
-            for(int i=0;i<SIZE;i++){
-                score>>myArray2[i];
-            }//closes for loop
-            //sorting routine goes here
-            bubSort2(myArray2,SIZE);
-            dispAray(myArray2,SIZE);
-            score.close();
-            
-            
-            
-            break;
-        }//closes case
-            //searches for players
-        case 'e': {
-            //declare variable for searching
-            char target;
-            cout<<"Enter a search term (initials)"<<endl;
-            cin>>target;
-            ifstream file("Leaderboard.txt");
-            ifstream scores("Scores.txt");
-            const int SIZE =10;
-            char search[SIZE];
-            int score[SIZE];
-            for(int i=0;i<SIZE;i++){
-                file>>search[i];
-                scores>>score[i];
-                if(target==search[i]){
-                    cout<<search[i]<<" "<<score[i]<<endl;
-                }//closes if statement
-                else {
-                    continue;
-                }
-            }//close for loop
-            break;
-        }//closes case
-        default:{
-            cout<<"Please choose a correct statement"<<endl;
-            
-        }//end default
-    }//end switch statement
-    return 0;
-}
+
+
+
+
+
+
+
