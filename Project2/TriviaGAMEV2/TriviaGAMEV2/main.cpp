@@ -11,7 +11,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <fstream>
-#include <vector>
+
 #include <sstream>
 
 using namespace std;
@@ -169,6 +169,7 @@ void levelTwo(int &sum){
     
     
 }
+//funtion for level three questions
 void levelThree(int &sum){
     string levelthree[]={"Pointillism was pioneered by which impressionist artist",
         "what is the average student loan debt ?",
@@ -180,6 +181,7 @@ void levelThree(int &sum){
         "Finish the phrase. ONe with the courage to _, is the master of the world. "};
     //level three options
     string threeResp[]={ "1.George Seurat 2.Van Gogh 3.Piasso 4.Charled de Moine",
+    
         "1.$0 2.$29,400 3.$50,000 4.$66,300 ",
         "1.Wireless Finder 2.wireless fidelity 3.nothing at all 4.Wireless information",
         "1.True 2.False",
@@ -222,7 +224,7 @@ void levelFour(int &sum){
         "An object traveling objet at constant velocity has forces that sum to ",
         "Which author made humpty dumpty famous? ",
         "This drug lord gained politial power in colombia",
-        "The unites states illegalized __ ",
+        "The unites states technically illegalized __ ",
         "Which of the following is the state bird of Oregon ?",
         "U2 is known for being a pioneer in the __ movement. "};
     //LEvel 4 options
@@ -233,7 +235,7 @@ void levelFour(int &sum){
         "1.the Velocity 2.Force of object pushing 3.Force due to acceleration of gravity 4.0",
         "1.Lewis Carroll 2. Walt whitman 3.Ralph Reed 4.Jean Babtiste",
         "1.Fidel Castro 2.Pablo Escobar 3.Amado Carillo Fuentes 4.Frank Lucas",
-        "1.Slavery 2.women's voting restritons 3.The Draft 4.Kinder Eggs ",
+        "1.Slavery 2.filming police offiers 3.The Draft 4.Kinder Eggs ",
         "1.Blue Jay 2.Yellow Tit 3.Crow 4.Western Meadowlark",
         "1.Post-Punk 2.Progressive Rock 3.Easy Listening 4.Punk"};
     //Level 4 answers
@@ -321,7 +323,7 @@ int main() {
     cout<<"b.view sources"<<endl;
     cout<<"c.view rules of the game"<<endl;
     cout<<"d.view leaderboard"<<endl;
-    
+    cout<<"e.search for player ans score"<<endl;
     cin>>pick;
     switch(pick){
             
@@ -391,12 +393,15 @@ int main() {
             cout<<"Enter a search term (initials)"<<endl;
             cin>>target;
             ifstream file("Leaderboard.txt");
+            ifstream scores("Scores.txt");
             const int SIZE =10;
             char search[SIZE];
+            int score[SIZE];
             for(int i=0;i<SIZE;i++){
                 file>>search[i];
+                scores>>score[i];
                 if(target==search[i]){
-                    cout<<search[i]<<endl;
+                    cout<<search[i]<<" "<<score[i]<<endl;
                 }//closes if statement
                 else {
                     continue;
