@@ -12,16 +12,17 @@
 #include <ctime>
 #include <cstdlib>
 #include <fstream>
+#include <iomanip>
 //User Libraries
 //Global constants
 
 
 using namespace std;
-//funtion prototypes
+//function prototypes
 //function to sort
+
+
 void bubSort(int a[],int num);
-//seond sorting funtion
-void bubSort2(int a[],int num);
 //sawap function for sort
 void swap(int &a,int &b);
 //function to display array
@@ -37,14 +38,16 @@ void levelFive(int &sum);
 int main(){
     //Begin game
     //Add databases
-    //LEvel one questions
+    //delare variable for user to choose from switch case
     char pick;
+    //output ase statements
     cout<<"Welcome to the Game. "<<endl;
     cout<<"a.Play the game\n";
     cout<<"b.view sources"<<endl;
     cout<<"c.view rules of the game"<<endl;
     cout<<"d.view leaderboard"<<endl;
     cout<<"e.search for player ans score"<<endl;
+    //prompt user to choose from swith statement
     cin>>pick;
     switch(pick){
             
@@ -53,13 +56,14 @@ int main(){
         case 'a': {
             int sum=0;
             cout<<"Welcome to my Trivia Game!"<<endl;
+            //implement all level funtions
             levelOne(sum);
             levelTwo(sum);
             levelThree(sum);
             levelFour(sum);
             levelFive(sum);
             
-            //displays how much they hae won
+            //displays how much they have won
             cout<<"You have earned a total of $ "<<sum<<endl;
             //variable that asks for their initials
             char win;
@@ -102,7 +106,7 @@ int main(){
             
             // declare size of array
             const int SIZE=10;
-            //declare array for
+            //declare array for sores
             int myArray2[SIZE];
             //fill array with loop
             for(int i=0;i<SIZE;i++){
@@ -110,7 +114,7 @@ int main(){
             }//closes for loop
             //sorting routine goes here
             //sort the array
-            bubSort2(myArray2,SIZE);
+            bubSort(myArray2,SIZE);
             //display the asorted array
             dispAray(myArray2,SIZE);
             score.close();
@@ -123,6 +127,7 @@ int main(){
         case 'e': {
             //declare variable for searching
             char target;
+            //prompt for search term
             cout<<"Enter a search term (initials)"<<endl;
             cin>>target;
             //stream leaderboard and score file
@@ -140,6 +145,7 @@ int main(){
                 scores>>score[i];
                 if(target==search[i]){
                     //assemble the arrays to output the person and sore searhed
+                    cout<<setw(5)<<endl;
                     cout<<search[i]<<" "<<score[i]<<endl;
                 }//closes if statement
                 else {
@@ -157,33 +163,15 @@ int main(){
     }//end switch statement
     return 0;
 }
-//funtion for bubble sort
-void bubSort(int a[],int num){
-    //swap it
-    bool swap1;
-    //loop to control swpping
-    do {
-        swap1=false;
-        //dynamically swap
-        for(int i=0;i<num-1;i++){
-            if(a[i]>a[i+1]){
-                int temp=a[i];
-                a[i]=a[i+1];
-                a[i+1]=temp;
-                swap1=true;
-            }//close if statement
-        }//closes for loop
-    }while(swap1); //closes do whie loop
-    
-}//closes bubble sort function
+
 //bubble sort funtion
-void bubSort2(int a[],int num){
+void bubSort(int a[],int num){
     //declare boolean
     bool swap2;
-    // initialize do while swaping
+    // initialize do while swapping
     do{
         swap2=false;
-        //dynamially swap
+        //dynamically swap
         for(int i=0;i<num-1;i++){
             if(a[i]<a[i+1]){
                 swap(a[i],a[i+1]);
@@ -204,13 +192,14 @@ void swap(int &a,int &b){
 void dispAray(const int a[],int num){
     //loop that display sorted function
     for(int i=0;i<num;i++){
+        cout<<setw(5)<<endl;
         cout<<a[i]<<endl;
     }//closes for loop
     
 }
 //function for level one
 void levelOne(int sum){
-    
+    //level one questions
     string leveloneQ[]={"What is the capital of California",
         "Which president approved the FHA Reverse Mortgage?",
         "Which Inventor discovered Alternating current ?",
@@ -245,11 +234,15 @@ void levelOne(int sum){
     cout<<endl;
     //Loops that controls the number of questioon asked for level one
     do {
+        //decalre variable for user to hoose and generate random number
         int choose;
         int a=rand()%8;
+        //dipslay q's and a
         cout<<leveloneQ[a]<<endl;
         cout<<oneResp[a]<<endl;
+        //prompt for answer
         cin>>choose;
+        //verify if correct
         if(choose==oneansw[a]){
             cout<<"correct."<<endl;
             count=1000;
@@ -266,7 +259,7 @@ void levelOne(int sum){
 }
 //Function for level two
 void levelTwo(int &sum){
-    
+    // declare level one questions
     string leveltwo[]= {"who took the road less traveled by ?",
         "Who discovered Radium, consequently receiving radiation ?",
         "Galileo invented the telescope",
@@ -291,13 +284,18 @@ void levelTwo(int &sum){
     cout<<"You are now on level two questions"<<endl;
     //For loop for level two questions
     for(int counter=0;counter<=2;counter++){
+        //variable for user to choose, money counter, random number generation
         int choose1;
         int count = 0;
         count+=sum;
+        //randomly generate a number
         int b=rand()%8;
+        //display the questions and responses
         cout<<leveltwo[b]<<endl;
         cout<<twoResp[b]<<endl;
+        //prompt for response
         cin>>choose1;
+        //erigy answer is corret
         if(choose1==twoansw[b]){
             cout<<"correct!!"<<endl;
             count=25000;
@@ -335,15 +333,21 @@ void levelThree(int &sum){
     int answ3[]        =  {1,2,3,2,4,1,2,3};
     cout<<"You are now on level 3"<<endl;
     cout<<"The questions are now worth $50,000."<<endl;
+    //delare variable that counts money
     int counter;
     int count=0;
     count+=sum;
     while(counter<=3){
+        //declare varibal for user to choose
         int choose2;
+        //ariable to generate random number
         int c=rand()%8;
+        //display question and possibl eresponses
         cout<<levelthree[c]<<endl;
         cout<<threeResp[c]<<endl;
+        //prompt for input
         cin>>choose2;
+        //erify if answer is correct
         if(choose2==answ3[c]){
             cout<<"Correct!"<<endl;
             count=50000;
@@ -388,12 +392,15 @@ void levelFour(int &sum){
     int count=0;
     count+=sum;
     for(int counter=0;counter<=2;counter++){
-        
+        //declare ariable for user to
         int choose3;
+        //generate a random number
         int d=rand()%8;
+        //display question and responses
         cout<<levelFour[d]<<endl;
         cout<<fourRes[d]<<endl;
         cin>>choose3;
+        //verify answer is correct
         if(choose3==answ4[d]){
             cout<<"Correct"<<endl;
             count=100000;
@@ -438,11 +445,16 @@ void levelFive(int &sum){
     //Dynamicallu changing sum of money
     count+=sum;
     for(int counter=0;counter<=2;counter++){
+        //variable for user to choose
         int choose4;
+        //generate a random number
         int e =rand()%8;
+        //display questions and responses
         cout<<levelfive[e]<<endl;
         cout<<fiveRes[e]<<endl;
+        //prompt for input
         cin>>choose4;
+        //verify user entered the correct response
         if(choose4==answ5[e]){
             cout<<"Correct"<<endl;
             count=250000;
