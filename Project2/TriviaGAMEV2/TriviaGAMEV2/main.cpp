@@ -6,17 +6,19 @@
 //  Copyright (c) 2015 Guillermo . All rights reserved.
 //
 
+//System Libraries
 #include <iostream>
 #include <string>
 #include <ctime>
 #include <cstdlib>
 #include <fstream>
-
+//User Libraries
+//Global constants
 
 
 using namespace std;
+//funtion prototypes
 //function to sort
-
 void bubSort(int a[],int num);
 //seond sorting funtion
 void bubSort2(int a[],int num);
